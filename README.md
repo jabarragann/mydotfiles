@@ -1,1 +1,1 @@
-# mydotfiles
+# Terminal configuration files 
