@@ -1,3 +1,5 @@
 [user]
 	email = jbarrag3@jh.edu
 	name = Juan Antonio Barragan
+[core]
+	editor = vim
