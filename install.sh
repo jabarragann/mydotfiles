@@ -1,9 +1,16 @@
 #!/bin/bash
 
 mydotfiles="$HOME/mydotfiles"
+programsdir="$HOME/programs/"
+mkdir -v -p $programsdir
+
+#Download nnn
+echo -e "\n <-----Downloading nnn -----> \n"
+wget -O $programsdir/nnn-v4.7.tar.gz -nv https://github.com/jarun/nnn/releases/download/v4.7/nnn-v4.7.tar.gz
+tar xf $programsdir/nnn-v4.7.tar.gz -C $programsdir 
 
 #Download nerd fonts
-echo -e "<-----Downloading nerd fonts-----> \n"
+echo -e "\n <-----Downloading nerd fonts-----> \n"
 local_fonts_dir="$HOME/.local/share/fonts/nerdfonts/"
 mkdir -v -p $local_fonts_dir
 
