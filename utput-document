@@ -1,0 +1,5 @@
+wget: unable to resolve host address ‘hack_regular_nerd_font_complete.ttf’
+2022-12-13 22:55:35 URL:https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf [1197836/1197836] -> "/home/juan1995/temp/Hack Regular Nerd Font Complete Mono.ttf.1" [1]
+FINISHED --2022-12-13 22:55:35--
+Total wall clock time: 0.3s
+Downloaded: 1 files, 1.1M in 0.03s (41.2 MB/s)
