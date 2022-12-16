@@ -23,7 +23,7 @@ run_nnn()
     
     # x copy to clipboard.
     # e open in terminal
-    nnn -xe "$@"
+    nnn -xe -A "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
             . "$NNN_TMPFILE"
