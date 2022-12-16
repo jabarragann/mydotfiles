@@ -23,6 +23,7 @@ wget -O $local_fonts_dir/hack_regular_nerd_font_complete.ttf -nv  $nerd_fonts_ur
 echo -e "<-----Creating symbolic links-----> \n"
 ln -s $HOME/mydotfiles/git/gitconfig ~/.gitconfig
 ln -s $HOME/mydotfiles/vim/vimrc ~/.vimrc
+ln -s $HOME/mydotfiles/ssh/config $HOME/.ssh/config
 
 # Regenerate font cache
 fc-cache -f 
