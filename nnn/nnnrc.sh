@@ -36,9 +36,11 @@ n ()
 {
     export EDITOR=/usr/bin/vim
     export VISUAL=vim
-    run_nnn
+    export NNN_OPENER=/usr/bin/vim
+    run_nnn -c
 }
 ##NNN for visual studio code
+# For a CLI-only environment, set NNN_OPENER to nuke. Use option -c.
 nn ()
 {
     export EDITOR=code
