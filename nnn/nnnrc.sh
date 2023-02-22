@@ -29,9 +29,12 @@ run_nnn()
             . "$NNN_TMPFILE"
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
+
+    unset NNN_OPENER 
 }
 
 #NNN for cli environments
+# For a CLI-only environment, set NNN_OPENER to nuke. Use option -c.
 n ()
 {
     export EDITOR=/usr/bin/vim
@@ -40,7 +43,6 @@ n ()
     run_nnn -c
 }
 ##NNN for visual studio code
-# For a CLI-only environment, set NNN_OPENER to nuke. Use option -c.
 nn ()
 {
     export EDITOR=code
