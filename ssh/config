@@ -11,6 +11,11 @@ Host dvrk_05 #dvrk - Jintan pc
     HostName lcsr-dvrk-05.lcsr.jhu.edu
     IdentityFile ~/.ssh/id_lcsr_dvrk_05
 
+Host thin7 # GPU computer
+    User jbarrag3
+    HostName thin7.lcsr.jhu.edu
+    IdentityFile ~/.ssh/id_lcsr_thin7
+
 Host alias
     HostName hostname
     User user
