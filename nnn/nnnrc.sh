@@ -1,3 +1,4 @@
+#NNN man pages: https://man.archlinux.org/man/community/nnn/nnn.1.en 
 run_nnn()
 {
     # Block nesting of nnn in subshells
@@ -23,7 +24,7 @@ run_nnn()
     
     # x copy to clipboard.
     # e open in terminal
-    nnn -xe -A "$@"
+    nnn "$@" -xe -A
 
     if [ -f "$NNN_TMPFILE" ]; then
             . "$NNN_TMPFILE"

@@ -4,10 +4,10 @@ mydotfiles="$HOME/mydotfiles"
 programsdir="$HOME/programs/"
 mkdir -v -p $programsdir
 
-#Download nnn
+#Download nnn 
 echo -e "\n <-----Downloading nnn -----> \n"
-wget -O $programsdir/nnn-v4.7.tar.gz -nv https://github.com/jarun/nnn/releases/download/v4.7/nnn-v4.7.tar.gz
-tar xf $programsdir/nnn-v4.7.tar.gz -C $programsdir 
+wget -O $programsdir/nnn-v4.8.tar.gz -nv https://github.com/jarun/nnn/releases/download/v4.8/nnn-v4.8.tar.gz
+tar xf $programsdir/nnn-v4.8.tar.gz -C $programsdir 
 
 #Download nerd fonts
 echo -e "\n <-----Downloading nerd fonts-----> \n"
@@ -24,6 +24,10 @@ echo -e "<-----Creating symbolic links-----> \n"
 ln -s $HOME/mydotfiles/git/gitconfig ~/.gitconfig
 ln -s $HOME/mydotfiles/vim/vimrc ~/.vimrc
 ln -s $HOME/mydotfiles/ssh/config $HOME/.ssh/config
+ln -s $HOME/mydotfiles/aliases/aliases.sh $HOME/.aliases
+
+# Add juan configs to bashrc
+echo 'source $HOME/mydotfiles/bash/bashrc.sh' >> ~/.bashrc
 
 # Regenerate font cache
 fc-cache -f 

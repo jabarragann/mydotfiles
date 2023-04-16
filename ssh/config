@@ -1,17 +1,19 @@
 # Read more about SSH config files: https://linux.die.net/man/5/ssh_config
 
 #LCSR machines
-Host dvrk_09 #Full daVinci
+
+#Full daVinci
+Host dvrk_09 
     User jbarrag3
     HostName lcsr-dvrk-09.lcsr.jhu.edu
     IdentityFile ~/.ssh/id_lcsr_dvrk_09
-
-Host dvrk_05 #dvrk - Jintan pc
+#dvrk - Jintan pc
+Host dvrk_05 
     User jbarrag3
     HostName lcsr-dvrk-05.lcsr.jhu.edu
     IdentityFile ~/.ssh/id_lcsr_dvrk_05
-
-Host thin7 # GPU computer
+# GPU computer
+Host thin7 
     User jbarrag3
     HostName thin7.lcsr.jhu.edu
     IdentityFile ~/.ssh/id_lcsr_thin7
