@@ -6,3 +6,7 @@ alias gc="git commit"
 alias ggl="git log --graph --oneline --decorate --all"
 # Vim aliases
 alias v="vim"
+# Other aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
