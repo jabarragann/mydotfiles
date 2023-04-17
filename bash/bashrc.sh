@@ -10,5 +10,5 @@ source $HOME/mydotfiles/bash/bashcmdprompt.sh
 
 #local configs
 if [ -f ~/.bashrc.local ]; then
-    source ~/.bash_profile.local
+    source ~/.bashrc.local
 fi
