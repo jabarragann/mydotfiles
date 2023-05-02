@@ -2,7 +2,9 @@
 alias files='xdg-open . > /dev/null 2>&1'
 # Git aliases
 alias gs="git status"
+alias ga="git add"
 alias gc="git commit"
+alias gcm="git commit -m"
 alias ggl="git log --graph --oneline --decorate --all"
 # Vim aliases
 alias v="vim"
