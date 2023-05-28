@@ -10,6 +10,7 @@
 
 # Local configurations
 Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists.
+
 # Installation steps 
 1. Enable github ssh
 2. Enable fonts in terminal
