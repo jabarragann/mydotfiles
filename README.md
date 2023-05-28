@@ -6,6 +6,7 @@
 3. Automatically compile NNN without sudo 
    1. Without sudo you need to compile and then manually add to path. 
 4. Add compiled nnn to path
+5. Add way of cleaning/removing all software
 
 # Local configurations
 Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists.
