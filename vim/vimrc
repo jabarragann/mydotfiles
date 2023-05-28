@@ -139,6 +139,9 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'Konfekt/vim-wsl-copy-paste'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
