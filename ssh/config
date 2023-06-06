@@ -18,6 +18,12 @@ Host thin7
     HostName thin7.lcsr.jhu.edu
     IdentityFile ~/.ssh/id_lcsr_thin7
 
+# Temporal ugrad account - only available until august 2023
+Host ugrad1
+    User sum12301
+    HostName ugradx.cs.jhu.edu
+    IdentityFile ~/.ssh/id_temp_ugrad01
+
 Host alias
     HostName hostname
     User user
