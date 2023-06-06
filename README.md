@@ -7,6 +7,8 @@
    1. Without sudo you need to compile and then manually add to path. 
 4. Add compiled nnn to path
 5. Add way of cleaning/removing all software
+6. Add terminator keybindings to mydotfiles
+7. Change shortcuts to open windows in vim to the ones in terminator
 
 # Local configurations
 Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists.

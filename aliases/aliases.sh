@@ -20,3 +20,5 @@ alias v="vim"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+#open bashrc in linux
+alias vbrc="vim ~/.bashrc"

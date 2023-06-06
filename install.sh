@@ -14,10 +14,16 @@ echo -e "\n <-----Downloading nerd fonts-----> \n"
 local_fonts_dir="$HOME/.local/share/fonts/nerdfonts/"
 mkdir -v -p $local_fonts_dir
 
-nerd_fonts_mono_url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf
-nerd_fonts_url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
-wget -O $local_fonts_dir/hack_regular_nerd_font_complete_mono.ttf -nv $nerd_fonts_mono_url 
-wget -O $local_fonts_dir/hack_regular_nerd_font_complete.ttf -nv  $nerd_fonts_url
+# Old url don't work any more
+# nerd_fonts_mono_url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf
+# nerd_fonts_url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
+# wget -O $local_fonts_dir/hack_regular_nerd_font_complete_mono.ttf -nv $nerd_fonts_mono_url 
+# wget -O $local_fonts_dir/hack_regular_nerd_font_complete.ttf -nv  $nerd_fonts_url
+
+nerd_fonts_mono_url=https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf 
+nerd_fonts_url= https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFont-Regular.ttf 
+wget -O $local_fonts_dir/HackNerdFontMono-Regular.ttf -nv $nerd_fonts_mono_url 
+wget -O $local_fonts_dir/HackNerdFont-Regular.ttf -nv  $nerd_fonts_url
 
 # Create symbolic links
 echo -e "<-----Creating symbolic links-----> \n"
