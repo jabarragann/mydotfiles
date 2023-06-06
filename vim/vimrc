@@ -98,6 +98,9 @@ imap jk <Esc>
 vnoremap > >gv
 vnoremap < <gv
 
+"Disable modelines -- To avoir following error: Error detected while processing modelines 
+set nomodeline
+
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
 " for movement, rather than using more efficient movement commands, is also a
@@ -141,7 +144,15 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'Konfekt/vim-wsl-copy-paste'
+" Plug 'Konfekt/vim-wsl-copy-paste'
+Plug 'mcchrish/nnn.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" NnnExplorer config
+
+" Exit Vim if NnnExplorer is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && &filetype ==# 'nnn' | quit! | endif
+" Close the tab if NnnExplorer is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && &filetype ==# 'nnn' | quit! | endif
