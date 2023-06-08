@@ -22,3 +22,4 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 #open bashrc in linux
 alias vbrc="vim ~/.bashrc"
+alias sbrc="echo 'sourcing bashrc...'; source ~/.bashrc"
