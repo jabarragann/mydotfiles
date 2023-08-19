@@ -17,7 +17,7 @@ syntax on
 " Color scheme
 " colorscheme desert
 " colorscheme slate
-colorscheme peachpuff
+" colorscheme peachpuff
 
 " Disable the default Vim startup message.
 set shortmess+=I

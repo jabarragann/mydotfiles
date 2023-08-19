@@ -9,6 +9,8 @@ export CUDADIR=/usr/local/cuda-11.3
 #alias rm="trash -v"
 #alias ros_env='source /home/juan1995/terminal_configuration/.rosrc.sh'
 #alias conda_env='source /home/juan1995/terminal_configuration/.condarc.sh'
+alias vbrc_local="vim ~/mydotfiles/bash/local/bash-juan-jhu-pc.sh"
+
 alias tf_env='conda activate tf_env'
 alias torch_env='conda activate torch_env'
 alias robostack='conda activate robostackenv'
@@ -19,8 +21,7 @@ alias slicer="/home/juan1995/programs/Slicer-5.0.3-linux-amd64/Slicer"
 # Rclone
 alias jhudrivemnt="rclone mount OneDrive-JHU:RcloneData ~/mnt --vfs-cache-mode full"
 #Blender
-alias blender="/home/juan1995/programs/blender-2.93.11-linux-x64/blender"
-
+alias blender="/home/juan1995/programs/blender-3.3.8-linux-x64/blender"
 ### Conda aliases
 alias cae='conda activate'
 alias cde='conda deactivate'
