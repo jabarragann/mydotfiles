@@ -18,6 +18,12 @@ Host thin7
     HostName thin7.lcsr.jhu.edu
     IdentityFile ~/.ssh/id_lcsr_thin7
 
+# Juan linux 
+host juanlinux
+    User juan1995
+    HostName 10.162.34.97 
+    IdentityFile ~/.ssh/id_juanlinux
+
 # Temporal ugrad account - only available until august 2023
 Host ugrad1
     User sum12301
