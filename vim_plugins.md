@@ -18,12 +18,14 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 3. [vim repeat](https://github.com/tpope/vim-repeat)
 4. [vim wsl copy paste](https://github.com/Konfekt/vim-wsl-copy-paste)
 5. [vim nnn](https://github.com/mcchrish/nnn.vim)
+6. [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
 
 ## Shortcuts
 
 * NNN explorer: `:NnnExplorer`
 * Open new horizontal split vim: Ctrl+w+s
 * Open new vertical split vim: Ctrl+w+v
+* Table Mode: `:TableModeToggle` or `<leader>tm`
 
 ## NNN explorer
 

@@ -7,15 +7,26 @@
    1. Without sudo you need to compile and then manually add to path. 
 4. Add compiled nnn to path
 5. Add way of cleaning/removing all software
-6. Add terminator keybindings to mydotfiles
+6. Add **terminator keybindings to mydotfiles**
 7. Change shortcuts to open windows in vim to the ones in terminator
+8. Add foldable sections to readme installation steps.
 
 # Local configurations
 Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists.
 
 # Installation steps 
 1. Enable github ssh
-2. Enable fonts in terminal
+2. Enable fonts in terminal, e.g., terminator configuration
+3. Install [vim-plug](https://github.com/junegunn/vim-plug)
+```bash
+# Check in link vim-plug link for the latest installation instruction
+# Updated 2023-07-06
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+5. Run `:PlugInstall` in vim
+6. Run installation script
+7. compile nnn
 
 **Installation script**
 ```bash
