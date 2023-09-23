@@ -9,15 +9,20 @@ To setup a new terminal you need to update the keyboard shortcuts and install fo
 ### Windows instructions
 1) Download fonts.
 2) right click on the fonts and then select install
-3) Select the font in WindowsTerminal apperance settings
+3) Select the font in WindowsTerminal in `settings->specific_profile->apperance fonts` 
 
 **Additional settings in VIM**
 * Vim visual mode does not look good by default in windows terminal
 
 https://stackoverflow.com/questions/31950035/changing-text-selection-color-in-visual-mode-in-vim
 
-**Todo:**
-Hack nerd fonts don't seem to fully work in Windows.
+```
+set background=dark
+```
+Take a look at `:help 'background'`
+
+**Notes:**
+New Hack nerd fonts only work with latest version of nnn.
 
 ## List keyboard shortcuts
 

@@ -144,9 +144,10 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-" Plug 'Konfekt/vim-wsl-copy-paste'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'mcchrish/nnn.vim'
+" WSL specific
+" Plug 'Konfekt/vim-wsl-copy-paste'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -157,3 +158,11 @@ call plug#end()
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && &filetype ==# 'nnn' | quit! | endif
 " Close the tab if NnnExplorer is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && &filetype ==# 'nnn' | quit! | endif
+
+
+" Use the `WSL_DISTRO_NAME` env variable to detect if vim is being
+" run in a WSL session 
+if !empty($WSL_DISTRO_NAME)
+  set background=dark
+endif
+

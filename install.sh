@@ -20,6 +20,10 @@ mkdir -v -p $local_fonts_dir
 # wget -O $local_fonts_dir/hack_regular_nerd_font_complete_mono.ttf -nv $nerd_fonts_mono_url 
 # wget -O $local_fonts_dir/hack_regular_nerd_font_complete.ttf -nv  $nerd_fonts_url
 
+# TODO:
+# - It will probably be better to download the fonts directly from the releases
+# For example: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip   
+
 nerd_fonts_mono_url=https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf 
 nerd_fonts_url= https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/HackNerdFont-Regular.ttf 
 wget -O $local_fonts_dir/HackNerdFontMono-Regular.ttf -nv $nerd_fonts_mono_url 

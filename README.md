@@ -1,6 +1,8 @@
 # Terminal configuration files 
 
 ## TODO:
+0. Split VIMRC file into multiple files
+   1.  https://vi.stackexchange.com/questions/5441/is-it-possible-and-useful-to-split-vimrc 
 1. Easy way to setup my github ssh access
 2. Add shebangs to my scripts
 3. Automatically compile NNN without sudo 
