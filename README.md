@@ -42,3 +42,9 @@ make O_NERD=1
 # With sudo access
 sudo make O_NERD=1 strip install
 ```
+
+## Anaconda config
+Avoid auto_activate of base environment
+```
+conda config --set auto_activate_base false
+```
