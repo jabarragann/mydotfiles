@@ -14,6 +14,9 @@ alias ga="git add"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias ggl="git log --graph --oneline --decorate --all"
+alias gp="git push"
+alias gcreadme="git add README.md; git commit -m \"Update README.md\""
+
 # Vim aliases
 alias v="vim"
 # Other aliases
