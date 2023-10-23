@@ -1,35 +1,29 @@
 # Terminal configuration files 
+Configuration files for terminal environment, [nnn][1] and vim.
 
-## TODO:
-0. Split VIMRC file into multiple files
-   1.  https://vi.stackexchange.com/questions/5441/is-it-possible-and-useful-to-split-vimrc 
-1. Easy way to setup my github ssh access
-2. Add shebangs to my scripts
-3. Automatically compile NNN without sudo 
-   1. Without sudo you need to compile and then manually add to path. 
-4. Add compiled nnn to path
-5. Add way of cleaning/removing all software
-6. Add **terminator keybindings to mydotfiles**
-7. Change shortcuts to open windows in vim to the ones in terminator
-8. Add foldable sections to readme installation steps.
+[1]: https://github.com/jarun/nnn
 
-# Local configurations
-Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists.
+**Included features**
+1. nnn configurations 
+2. vim configurations 
+3. icon support in nnn with [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+
 
 # Installation steps 
 
 ## Preparative steps
 
 1. Enable github ssh
-2. Enable fonts in terminal, e.g., terminator configuration
-3. clone mydotfiles repository.
+2. Clone mydotfiles repository.
 
 ## Install my configs
 
+1. Launch installation scripts to download nnn and nerdfonts
 ```bash
 sudo ./install_cmd_utilities.sh #Install dependencies
 ./install.sh
 ```
+2. Enable nerd fonts in terminal, e.g., terminator configuration
 
 ## Compile nnn
 
@@ -53,9 +47,24 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # Additional configurations
 
+## Local configurations
+Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists.
+
 ## Anaconda config
 Avoid auto_activate of base environment
 ```
 conda config --set auto_activate_base false
 ```
 
+# TODO:
+0. Split VIMRC file into multiple files
+   1.  https://vi.stackexchange.com/questions/5441/is-it-possible-and-useful-to-split-vimrc 
+1. Easy way to setup my github ssh access
+2. Add shebangs to my scripts
+3. Automatically compile NNN without sudo 
+   1. Without sudo you need to compile and then manually add to path. 
+4. Add compiled nnn to path
+5. Add way of cleaning/removing all software
+6. Add **terminator keybindings to mydotfiles**
+7. Change shortcuts to open windows in vim to the ones in terminator
+8. Add foldable sections to readme installation steps.
