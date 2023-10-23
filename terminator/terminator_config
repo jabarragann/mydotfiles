@@ -1,0 +1,29 @@
+[global_config]
+  suppress_multiple_term_dialog = True
+[keybindings]
+  go_up = <Alt>k
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  resize_up = <Shift><Alt>k
+  resize_down = <Shift><Alt>j
+  resize_left = <Shift><Alt>h
+  resize_right = <Shift><Alt>l
+  layout_launcher = <Alt>grave
+[profiles]
+  [[default]]
+    background_darkness = 0.88
+    cursor_color = "#aaaaaa"
+    font = Hack Nerd Font 13
+    scrollback_lines = 558
+    scrollback_infinite = True
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
