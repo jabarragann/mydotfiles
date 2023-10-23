@@ -17,24 +17,21 @@
 Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists.
 
 # Installation steps 
+
+## Preparative steps
+
 1. Enable github ssh
 2. Enable fonts in terminal, e.g., terminator configuration
-3. Install [vim-plug](https://github.com/junegunn/vim-plug)
-```bash
-# Check in link vim-plug link for the latest installation instruction
-# Updated 2023-07-06
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-5. Run `:PlugInstall` in vim
-6. Run installation script
-7. compile nnn
+3. clone mydotfiles repository.
 
-**Installation script**
+## Install my configs
+
 ```bash
+sudo ./install_cmd_utilities.sh #Install dependencies
 ./install.sh
 ```
-**NNN installation**
+
+## Compile nnn
 
 ```bash
 # Without sudo access
@@ -43,8 +40,22 @@ make O_NERD=1
 sudo make O_NERD=1 strip install
 ```
 
+## Setup vim plugs
+
+1. Install [vim-plug](https://github.com/junegunn/vim-plug)
+```bash
+# Check in link vim-plug link for the latest installation instruction
+# Updated 2023-07-06
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+2. Open vim and run `:PlugInstall`
+
+# Additional configurations
+
 ## Anaconda config
 Avoid auto_activate of base environment
 ```
 conda config --set auto_activate_base false
 ```
+
