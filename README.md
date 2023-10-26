@@ -58,6 +58,10 @@ Avoid auto_activate of base environment
 ```
 conda config --set auto_activate_base false
 ```
+Reverse conda auto-activation
+```
+conda init --reverse $SHELL
+```
 
 # TODO:
 0. Split VIMRC file into multiple files
