@@ -38,12 +38,15 @@ sudo make O_NERD=1 strip install
 
 1. Install [vim-plug](https://github.com/junegunn/vim-plug)
 ```bash
-# Check in link vim-plug link for the latest installation instruction
+# Check vim-plug link for the latest installation instruction
 # Updated 2023-07-06
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 2. Open vim and run `:PlugInstall`
+
+## Terminator config
+Add key bindings to terminator config file in `$HOME/.config/terminator/config`
 
 # Additional configurations
 
