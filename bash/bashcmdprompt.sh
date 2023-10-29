@@ -6,10 +6,10 @@
 # * https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
 # ANSI color codes
-RS="\[\033[0m\]"    # reset
-HC="\[\033[1m\]"    # hicolor
-UL="\[\033[4m\]"    # underline
-INV="\[\033[7m\]"   # inverse background and foreground
+RS="\[\033[00m\]"    # reset
+HC="\[\033[01m\]"    # hicolor
+UL="\[\033[04m\]"    # underline
+INV="\[\033[07m\]"   # inverse background and foreground
 FBLK="\[\033[30m\]" # foreground black
 FRED="\[\033[31m\]" # foreground red
 FGRN="\[\033[32m\]" # foreground green
@@ -42,8 +42,10 @@ get_ros_distro(){
     fi
 }
 
-# Old prompt
+# Old prompt - working
 # export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[00m\]\\[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
 
-export PS1="${debian_chroot:+($debian_chroot)}$FGRNB\u@\h$RS:$FBLEB\w $RS$FRED$(parse_git_branch)$(get_ros_distro)$RS\\$ "
+# a backslash is needed before calling a function inside prompt, e.g., `\$(function)`
+export PS1="${debian_chroot:+($debian_chroot)}$FGRNB\u@\h$RS:$FBLEB\w $RS$FRED\$(parse_git_branch)\$(get_ros_distro)$RS\\$ "
+# export PS1="${debian_chroot:+($debian_chroot)}$FGRNB\u@\h$RS:$FBLEB\w $RS$FRED\$(parse_git_branch)$RS\\$ "
 
