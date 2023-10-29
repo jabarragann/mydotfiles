@@ -35,5 +35,15 @@ activate_ros_env(){
     source ~/research_juan/ambf/build/devel/setup.bash #AMBF
     #volumetric drilling
     source ~/research_juan/cisII_SDF_project/recording_script/volumetric_drilling/build/devel/setup.bash
+    # Resource prompt
+    source $HOME/mydotfiles/bash/bashcmdprompt.sh
 }
+
 alias ros="activate_ros_env"
+
+rosdvrk(){
+    source /opt/ros/noetic/setup.bash #ROS
+    source $HOME/research_juan/ros_ws/dvrk_ws/devel/setup.bash #AMBF
+    # resource prompt see bash/readme.md
+    source $HOME/mydotfiles/bash/bashcmdprompt.sh
+}
