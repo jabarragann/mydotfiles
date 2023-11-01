@@ -27,3 +27,7 @@ alias ....="cd ../../.."
 alias vbrc="vim ~/.bashrc"
 alias vbrc_local="vim ~/mydotfiles/bash/local/bash-juan-jhu-pc.sh"
 alias sbrc="echo 'sourcing bashrc...'; source ~/.bashrc"
+
+#conda aliases
+alias cae='conda activate'
+alias cde='conda deactivate'
