@@ -39,7 +39,7 @@ git_count_modified_files() {
     output=$(git status)
     modified_files=$(echo "$output" | grep -c 'modified')
     if [ "$modified_files" -gt 0 ]; then
-        echo "+$modified_files"
+        echo "|+$modified_files"
     # else
     #     echo "✅"
     fi
@@ -56,6 +56,6 @@ get_ros_distro(){
 # export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[00m\]\\[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
 
 # a backslash is needed before calling a function inside prompt, e.g., `\$(function)`
-export PS1="${debian_chroot:+($debian_chroot)}$FGRNB\u@\h$RS:$FBLEB\w $RS$FRED\$(parse_git_branch)|\$(git_count_modified_files)\$(get_ros_distro)$RS\\$ "
+export PS1="${debian_chroot:+($debian_chroot)}$FGRNB\u@\h$RS:$FBLEB\w $RS$FRED\$(parse_git_branch)\$(git_count_modified_files)\$(get_ros_distro)$RS\\$ "
 # export PS1="${debian_chroot:+($debian_chroot)}$FGRNB\u@\h$RS:$FBLEB\w $RS$FRED\$(parse_git_branch)$RS\\$ "
 
