@@ -1,6 +1,7 @@
 # Prompt config script
 
 * The prompt is set up to automatically display the ros distribution if available with the `get_ros_distro()` function. This function won't work correctly unless I resource the prompt after loading ros. The resourcing action happens inside the bash function that loads ros packages. The might be a better way to achieve this.
+* Git prompt gets current branch and the numer modified files.
  
 ## Resources
 
