@@ -36,7 +36,7 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 git_count_modified_files() {
-    output=$(git status)
+    output=$(git status 2> /dev/null)
     modified_files=$(echo "$output" | grep -c 'modified')
     if [ "$modified_files" -gt 0 ]; then
         echo "|+$modified_files"
