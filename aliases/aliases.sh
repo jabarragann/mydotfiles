@@ -25,7 +25,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 #open bashrc in linux
 alias vbrc="vim ~/.bashrc"
-alias vbrc_local="vim ~/mydotfiles/bash/local/bash-juan-jhu-pc.sh"
+alias vbrc_local="vim ~/.bashrc.local"
 alias sbrc="echo 'sourcing bashrc...'; source ~/.bashrc"
 
 #conda aliases
