@@ -35,7 +35,7 @@ activate_ros_env(){
     source ~/research_juan/ambf/build/devel/setup.bash #AMBF
     #volumetric drilling
     source ~/research_juan/cisII_SDF_project/recording_script/volumetric_drilling/build/devel/setup.bash
-    # Resource prompt
+    # Prompt needs to be resourced to show ros ws information. See bash/readme.md (Bug in prompt scripts). 
     source $HOME/mydotfiles/bash/bashcmdprompt.sh
 }
 
@@ -44,6 +44,7 @@ alias ros="activate_ros_env"
 rosdvrk(){
     source /opt/ros/noetic/setup.bash #ROS
     source $HOME/research_juan/ros_ws/dvrk_ws/devel/setup.bash #AMBF
-    # resource prompt see bash/readme.md
+
+    # Prompt needs to be resourced to show ros ws information. See bash/readme.md (Bug in prompt scripts). 
     source $HOME/mydotfiles/bash/bashcmdprompt.sh
 }
