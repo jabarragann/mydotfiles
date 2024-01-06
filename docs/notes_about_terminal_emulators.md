@@ -1,18 +1,18 @@
 # Notes about terminal emulators
 
-The following is an effort to standardize the keyboard shortcuts of the terminal emulators I used in linux and windows. Setup notes for Terminator and windows terminal. 
+The following is an effort to standardize the keyboard shortcuts of the terminal emulators I used in Linux and Windows. Setup notes for Terminator and Windows terminal. 
 
 ## Setup
 
-To setup a new terminal you need to update the keyboard shortcuts and install fonts.
+To set up a new terminal you need to update the keyboard shortcuts and install fonts.
 
 ### Windows instructions
 1) Download fonts.
 2) right click on the fonts and then select install
-3) Select the font in WindowsTerminal in `settings->specific_profile->apperance fonts` 
+3) Select the font in WindowsTerminal in `settings->specific_profile-> appearance fonts` 
 
 **Additional settings in VIM**
-* Vim visual mode does not look good by default in windows terminal
+* Vim visual mode does not look good by default in Windows terminal
 
 https://stackoverflow.com/questions/31950035/changing-text-selection-color-in-visual-mode-in-vim
 
@@ -22,11 +22,11 @@ set background=dark
 Take a look at `:help 'background'`
 
 **Notes:**
-New Hack nerd fonts only work with latest version of nnn.
+New Hack nerd fonts only work with the latest version of nnn.
 
 ## List keyboard shortcuts
 
-** Pane navigation shorcuts **
+**Pane navigation shortcuts**
 
 | Action                 | Shorcut         |
 |------------------------|-----------------|
@@ -46,5 +46,5 @@ New Hack nerd fonts only work with latest version of nnn.
 | close pane             | ctrl+shift+w    |
 |------------------------|-----------------|
 
-** tab navigation shorcuts **
+**tab navigation shortcuts**
 TODO
