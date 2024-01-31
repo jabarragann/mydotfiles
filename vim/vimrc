@@ -34,7 +34,8 @@ set ruler
 " This is useful because you can tell, at a glance, what count is needed to
 " jump up or down to a particular line, by {count}k to go up or {count}j to go
 " down.
-set relativenumber
+
+" set relativenumber
 
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
@@ -118,7 +119,16 @@ set nomodeline
 "inoremap <Up>    <ESC>:echoe "Use k"<CR>
 "inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
-" Advance Word processor configuration
+" MOVE LINES UP AND DOWN
+" Taken from: https://vimtricks.com/p/vimtrick-moving-lines/
+nnoremap <c-j> :m .+1<CR>==
+nnoremap <c-k> :m .-2<CR>==
+inoremap <c-j> <Esc>:m .+1<CR>==gi
+inoremap <c-k> <Esc>:m .-2<CR>==gi
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
+
+" ADVANCE WORD PROCESSOR CONFIGURATION
 func! WordProcessor()
   " movement changes
   map j gj
@@ -137,7 +147,7 @@ endfu
 com! WP call WordProcessor()
 
 
-" Plugins will be downloaded under the specified directory.
+" PLUGINS WILL BE DOWNLOADED UNDER THE SPECIFIED DIRECTORY.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Declare the list of plugins.
