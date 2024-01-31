@@ -1,4 +1,7 @@
-alias blender="/home/juan1995/programs/blender-3.6.7-linux-x64/blender"
+alias blender="Exec=env INTEL_DEBUG=reemit /home/juan1995/programs/blender-3.6.7-linux-x64/blender"
+alias hdfview="/home/juan1995/programs/HDFViewApp-3.3.1-ubuntu2004_64/HDFView/bin/HDFView"
+
+export PATH=$PATH:$HOME/.local/bin/
 
 # Ros aliases
 activate_ros_env(){
