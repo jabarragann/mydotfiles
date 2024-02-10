@@ -3,6 +3,9 @@ alias hdfview="/home/juan1995/programs/HDFViewApp-3.3.1-ubuntu2004_64/HDFView/bi
 
 export PATH=$PATH:$HOME/.local/bin/
 
+# Needed to have logging when using ROS packages from conda env 
+export ROS_PYTHON_LOG_CONFIG_FILE=/opt/ros/noetic/etc/ros/python_logging.conf
+
 # Ros aliases
 activate_ros_env(){
     source /opt/ros/noetic/setup.bash #ROS
