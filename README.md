@@ -30,6 +30,9 @@ sudo ./install_cmd_utilities.sh #Install dependencies
 ```bash
 # Without sudo access
 make O_NERD=1
+mkdir ~/.local/bin
+cp ./nnn ~/.local/bin/
+
 # With sudo access
 sudo make O_NERD=1 strip install
 ```
