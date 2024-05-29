@@ -71,8 +71,6 @@ conda init --reverse $SHELL
    1.  https://vi.stackexchange.com/questions/5441/is-it-possible-and-useful-to-split-vimrc 
 1. Easy way to setup my github ssh access
 2. Add shebangs to my scripts
-3. Automatically compile NNN without sudo 
-   1. Without sudo you need to compile and then manually add to path. 
 4. Add compiled nnn to path
 5. Add way of cleaning/removing all software
 6. Add **terminator keybindings to mydotfiles**
