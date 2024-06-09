@@ -1,4 +1,5 @@
-alias blender="/home/juan1995/programs/blender-3.6.7-linux-x64/blender"
+# Force blender to run in gpu
+alias blender="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia /home/juan1995/programs/blender-3.6.7-linux-x64/blender"
 
 # Needed with the intel integrate graphics
 # alias blender="Exec=env INTEL_DEBUG=reemit /home/juan1995/programs/blender-3.6.7-linux-x64/blender"
@@ -19,4 +20,11 @@ activate_ros_env(){
     source $HOME/mydotfiles/bash/bashcmdprompt.sh
 }
 alias ros="activate_ros_env"
+
+alias python="python3"
+
+
+## Specific for ISMR workshop 2024
+# ros
+# . /home/juan1995/learning/ros1_learning/package_creation_ws/devel/setup.bash
 
