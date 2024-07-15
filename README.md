@@ -76,3 +76,4 @@ conda init --reverse $SHELL
 6. Add **terminator keybindings to mydotfiles**
 7. Change shortcuts to open windows in vim to the ones in terminator
 8. Add foldable sections to readme installation steps.
+9. Add FZF in installation script

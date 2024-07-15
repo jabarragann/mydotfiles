@@ -15,3 +15,11 @@ PATH=$PATH:$HOME/.local/bin/
 if [ -f ~/.bashrc.local ]; then
     source ~/.bashrc.local
 fi
+
+# bash history
+# https://www.digitalocean.com/community/tutorials/how-to-use-bash-history-commands-and-expansions-on-a-linux-vps
+shopt -s histappend
+HISTSIZE=11000
+HISTFILESIZE=11000
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+

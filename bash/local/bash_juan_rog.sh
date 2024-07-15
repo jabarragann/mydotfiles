@@ -1,5 +1,6 @@
 # Force blender to run in gpu
 alias blender="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia /home/juan1995/programs/blender-3.6.7-linux-x64/blender"
+alias force_gpu="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia" 
 
 # Needed with the intel integrate graphics
 # alias blender="Exec=env INTEL_DEBUG=reemit /home/juan1995/programs/blender-3.6.7-linux-x64/blender"
