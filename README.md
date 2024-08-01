@@ -49,12 +49,16 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 2. Open vim and run `:PlugInstall`
 
 ## Terminator config
-Add key bindings to terminator config file in `$HOME/.config/terminator/config`
+Add key bindings to [terminator config](./terminator/terminator_config) file in `$HOME/.config/terminator/config`
 
 # Additional configurations
 
 ## Local configurations
-Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists.
+Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists. In cases where the local files wants to be tracked created a symlink to a file in mydotfiles. For example:
+
+```
+ln -s ~/mydotfiles/bash/local/bash_juan_rog.sh ~/.bashrc.local
+```
 
 ## Anaconda config
 Avoid auto_activate of base environment

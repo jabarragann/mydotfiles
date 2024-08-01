@@ -1,3 +1,6 @@
+export LD_LIBRARY_PATH=/usr/local/cuda-12.5/lib64
+export PATH=/usr/local/cuda-12.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
 # Force blender to run in gpu
 alias blender="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia /home/juan1995/programs/blender-3.6.7-linux-x64/blender"
 alias force_gpu="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia" 

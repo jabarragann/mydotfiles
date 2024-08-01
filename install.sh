@@ -31,3 +31,8 @@ echo 'source $HOME/mydotfiles/bash/bashrc.sh' >> ~/.bashrc
 # Regenerate font cache
 fc-cache -f 
 echo | fc-list | grep "Hack"
+
+# Compile and install nnn
+make O_NERD=1
+mkdir ~/.local/bin
+cp ./nnn ~/.local/bin/
