@@ -1,5 +1,7 @@
 Configuration for Jopling vimrc using <https://github.com/personalizedrefrigerator/joplin-plugin-codemirror-vimrc>
 
+> [!IMPORTANT]
+> Make sure to activate the vim keyboard in `options`->`general`->`advance_options`->`keyboard`.
 
 ```
 " A .vimrc-like file. At present, very little is supported.
