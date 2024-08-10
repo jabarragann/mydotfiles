@@ -21,5 +21,5 @@ fi
 shopt -s histappend
 HISTSIZE=11000
 HISTFILESIZE=11000
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
