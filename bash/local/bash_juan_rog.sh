@@ -1,4 +1,5 @@
-export LD_LIBRARY_PATH=/usr/local/cuda-12.5/lib64
+export LD_LIBRARY_PATH=/usr/local/cuda-12.5/lib64:/usr/local/lib:$LD_LIBRARY_PATH
+
 export PATH=/usr/local/cuda-12.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 # Force blender to run in gpu
