@@ -3,7 +3,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-12.5/lib64:/usr/local/lib:$LD_LIBRARY_PAT
 export PATH=/usr/local/cuda-12.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 export PATH=$PATH:$HOME/.local/bin
 
-### NNN - Be careful with the syntax 
+### NNN - If syntax is not correct NNN won't run. 
 export NNN_BMS="d:/home/juan95/research/discovery_grant"
 export NNN_BMS="$NNN_BMS;a:/home/juan95/research/accelnet_grant"
 export NNN_BMS="$NNN_BMS;r:/home/juan95/ros_ws;"
