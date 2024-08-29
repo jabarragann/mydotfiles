@@ -6,8 +6,8 @@ mkdir -v -p $programsdir
 
 # Download nnn 
 echo -e "\n <-----Downloading nnn -----> \n"
-wget -O $programsdir/nnn-v4.9.tar.gz -nv https://github.com/jarun/nnn/releases/download/v4.9/nnn-v4.9.tar.gz
-tar xf $programsdir/nnn-v4.9.tar.gz -C $programsdir 
+wget -O $programsdir/nnn-v5.0.tar.gz -nv https://github.com/jarun/nnn/releases/download/v5.0/nnn-v5.0.tar.gz
+tar xf $programsdir/nnn-v5.0.tar.gz -C $programsdir 
 
 # Download nerd fonts
 echo -e "\n <-----Downloading nerd fonts-----> \n"
@@ -33,6 +33,8 @@ fc-cache -f
 echo | fc-list | grep "Hack"
 
 # Compile and install nnn
-make O_NERD=1
 mkdir ~/.local/bin
+cd ~/$programsdir/nnn-5.0
+make O_NERD=1
 cp ./nnn ~/.local/bin/
+
