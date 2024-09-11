@@ -51,3 +51,10 @@ cd $programsdir/nnn-5.0
 make O_NERD=1
 cp ./nnn $LOCAL_BIN  
 
+# FZF INSTALLATION
+##################
+
+echo -e "\n <-----Installing fzf  -----> \n"
+
+git clone --depth 1 https://github.com/junegunn/fzf.git $programsdir/fzf
+$programsdir/fzf/install
