@@ -169,6 +169,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'mcchrish/nnn.vim'
+
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 " WSL specific
 " Plug 'Konfekt/vim-wsl-copy-paste'
 
