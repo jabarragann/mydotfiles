@@ -29,8 +29,9 @@ activate_ros_env(){
     source /opt/ros/noetic/setup.bash #ROS
     export PATH=$PATH:$HOME/research/ambf/bin/lin-x86_64 #AMBF
     source $HOME/research/ambf/build/devel/setup.bash #AMBF
+
     # Prompt needs to be resourced to show ros ws information. See bash/readme.md (Bug in prompt scripts). 
-    source $HOME/mydotfiles/bash/bashcmdprompt.sh
+    # source $HOME/mydotfiles/bash/bashcmdprompt.sh
 }
 alias ros="activate_ros_env"
 
@@ -52,4 +53,4 @@ alias python="python3"
 # . /home/juan1995/learning/ros1_learning/package_creation_ws/devel/setup.bash
 
 ## simulation assisted navigation
-PATH=$PATH:~/research/discovery_grant/volumetric_drilling/registration_pipeline/pipelines
+# PATH=$PATH:~/research/discovery_grant/volumetric_drilling/registration_pipeline/pipelines
