@@ -21,5 +21,11 @@ fi
 shopt -s histappend
 HISTSIZE=11000
 HISTFILESIZE=11000
+
+# history -a -> appends to history file
+# history -c -> clears history from current session 
+# history -r -> reloads history file
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+alias ahis="history -a"
+alias rhis="history -a; history -c; history -r;"
 

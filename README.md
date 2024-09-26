@@ -24,6 +24,8 @@ sudo ./install_cmd_utilities.sh #Install dependencies
 ./install.sh
 ```
 2. Enable nerd fonts in terminal, e.g., terminator configuration
+3. Remove history limits in default bashrc (HISTSIZE, HISTFILESIZE).
+
 
 ## Compile nnn
 
