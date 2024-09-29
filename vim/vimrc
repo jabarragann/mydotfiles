@@ -195,3 +195,8 @@ if !empty($WSL_DISTRO_NAME)
   set background=dark
 endif
 
+"""""""""""
+"VIM remaps
+"""""""""""
+source ~/mydotfiles/vim/keymaps.vim
+
