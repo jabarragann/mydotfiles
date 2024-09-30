@@ -66,12 +66,6 @@ set incsearch
 " Highlight search matches
 set hlsearch
 
-"Mapping to turn of search matches quickly
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Unbind some useless/annoying default key bindings.
-nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
-
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=
 
@@ -90,14 +84,6 @@ set autoindent
 
 "Show the typed cmds
 set showcmd
-
-"Remapping of Esc key
-imap jk <Esc>
-
-"Smart identation
-"keep visual mode after indent
-vnoremap > >gv
-vnoremap < <gv
 
 "Disable modelines -- To avoir following error: Error detected while processing modelines 
 set nomodeline
@@ -119,14 +105,6 @@ set nomodeline
 "inoremap <Up>    <ESC>:echoe "Use k"<CR>
 "inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
-" MOVE LINES UP AND DOWN
-" Taken from: https://vimtricks.com/p/vimtrick-moving-lines/
-nnoremap <c-j> :m .+1<CR>==
-nnoremap <c-k> :m .-2<CR>==
-inoremap <c-j> <Esc>:m .+1<CR>==gi
-inoremap <c-k> <Esc>:m .-2<CR>==gi
-vnoremap <c-j> :m '>+1<CR>gv=gv
-vnoremap <c-k> :m '<-2<CR>gv=gv
 
 """"""""""""""""""""""""""""""""""""""
 " ADVANCE WORD PROCESSOR CONFIGURATION
