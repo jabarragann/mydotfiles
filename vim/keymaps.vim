@@ -33,6 +33,9 @@ vnoremap <c-k> :m '<-2<CR>gv=gv
 " Source vimrc
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Run last macro  
+:nnoremap <leader>q @@
+
 " Testing
 nnoremap <leader>! :echo "hello world!"<CR> 
 
