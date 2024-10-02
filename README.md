@@ -74,7 +74,9 @@ conda init --reverse $SHELL
 
 # TODO:
 0. Split VIMRC file into multiple files
-   1.  https://vi.stackexchange.com/questions/5441/is-it-possible-and-useful-to-split-vimrc 
+   1.  <https://vi.stackexchange.com/questions/5441/is-it-possible-and-useful-to-split-vimrc>
+1. Add terminator settings automatically to config.
+2. In installation script check if `.local` directory is available if not create it.
 1. Easy way to setup my github ssh access
 2. Add shebangs to my scripts
 4. Add compiled nnn to path
@@ -83,3 +85,4 @@ conda init --reverse $SHELL
 7. Change shortcuts to open windows in vim to the ones in terminator
 8. Add foldable sections to readme installation steps.
 9. Add FZF in installation script
+

@@ -11,6 +11,7 @@ export NNN_BMS="$NNN_BMS;r:/home/juan95/ros_ws;"
 ## PROGRAMS
 alias blender="/home/juan1995/programs/blender-3.6.7-linux-x64/blender"
 alias hdfview="/home/juan1995/programs/HDFViewApp-3.3.1-ubuntu2004_64/HDFView/bin/HDFView"
+alias slicer=""
 
 
 # GPU problem fixed. No need for the aliases below
