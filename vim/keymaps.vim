@@ -47,8 +47,8 @@ nnoremap <leader>! :echo "hello world!"<CR>
 " FZF
 """""
 
-nnoremap <C-p> :Files <CR> 
-nnoremap <leader>g :GFiles <CR>
+nnoremap <C-p> :Files .<CR> 
+nnoremap <leader>g :GFiles .<CR>
 nnoremap <leader>b :Buffers <CR>
 
 """"""""""""""""""

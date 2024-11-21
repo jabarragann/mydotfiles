@@ -88,8 +88,8 @@ set showcmd
 "Disable modelines -- To avoir following error: Error detected while processing modelines 
 set nomodeline
 
-" Change current directory
-set autochdir
+" Change current directory -- doc says it may break some plugins.
+"set autochdir
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
