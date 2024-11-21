@@ -1,3 +1,7 @@
+## BASH VI MODE
+set -o vi
+bind '"jk":vi-movement-mode'
+
 ## ENV VARIABLES
 export LD_LIBRARY_PATH=/usr/local/cuda-12.5/lib64:/usr/local/lib:$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda-12.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -11,7 +15,9 @@ export NNN_BMS="$NNN_BMS;r:/home/juan95/ros_ws;"
 ## PROGRAMS
 alias blender="/home/juan1995/programs/blender-3.6.7-linux-x64/blender"
 alias hdfview="/home/juan1995/programs/HDFViewApp-3.3.1-ubuntu2004_64/HDFView/bin/HDFView"
-alias slicer=""
+
+alias slicer="/home/juan95/programs/Slicer-5.6.0-linux-amd64/Slicer"
+# alias slicer="/home/juan95/programs/Slicer-5.6.2-linux-amd64/Slicer"
 
 
 # GPU problem fixed. No need for the aliases below
@@ -34,7 +40,7 @@ activate_ros_env(){
     # Prompt needs to be resourced to show ros ws information. See bash/readme.md (Bug in prompt scripts). 
     # source $HOME/mydotfiles/bash/bashcmdprompt.sh
 }
-alias ros="activate_ros_env"
+alias r1="activate_ros_env"
 
 activate_ros2_env(){
     source /opt/ros/galactic/setup.bash #ROS
