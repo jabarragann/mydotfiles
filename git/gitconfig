@@ -4,6 +4,7 @@
 [core]
 	editor = vim
 [alias]
+# Git log aliases - from https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
     gl = gl1
     gl1 = gl1-specific --all
     gl2 = gl2-specific --all
