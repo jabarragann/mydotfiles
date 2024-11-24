@@ -46,6 +46,15 @@ activate_ros2_env(){
     source /opt/ros/galactic/setup.bash #ROS
     export ROS_DOMAIN_ID=10
     export ROS_LOCALHOST_ONLY=1
+    
+    # Colcon tools
+    if [[ -f /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash ]]; then
+        source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+    fi
+    # see https://colcon.readthedocs.io/en/released/user/installation.html#quick-directory-changes
+    if [[ -f /usr/share/colcon_cd/function/colcon_cd.sh ]]; then
+        source /usr/share/colcon_cd/function/colcon_cd.sh
+    fi
 
     # ROS2 ws with AMBF
     source /home/juan95/ros_ws/ros2_ws/install/setup.bash
