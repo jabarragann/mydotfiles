@@ -47,17 +47,21 @@ activate_ros2_env(){
     export ROS_DOMAIN_ID=10
     export ROS_LOCALHOST_ONLY=1
     
+    ros2_ws="/home/juan95/ros_ws/ros2_ws"
     # Colcon tools
     if [[ -f /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash ]]; then
         source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
     fi
     # see https://colcon.readthedocs.io/en/released/user/installation.html#quick-directory-changes
     if [[ -f /usr/share/colcon_cd/function/colcon_cd.sh ]]; then
-        source /usr/share/colcon_cd/function/colcon_cd.sh
+       source /usr/share/colcon_cd/function/colcon_cd.sh
+
+       # ROS2 tutorial suggest adding the path to ros2 installation.
+       export _colcon_cd_root=$ros2_ws
     fi
 
     # ROS2 ws with AMBF
-    source /home/juan95/ros_ws/ros2_ws/install/setup.bash
+    source "$ros2_ws/install/setup.bash"
 }
 alias r2="activate_ros2_env"
 
