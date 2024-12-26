@@ -1,5 +1,6 @@
 #############################
 ### Loading libraries/modules
+#############################
 
 source $HOME/mydotfiles/aliases/aliases.sh
 source $HOME/mydotfiles/nnn/nnnrc.sh
@@ -16,11 +17,14 @@ if [ -f ~/.bashrc.local ]; then
     source ~/.bashrc.local
 fi
 
+##############
 # bash history
+##############
+
 # https://www.digitalocean.com/community/tutorials/how-to-use-bash-history-commands-and-expansions-on-a-linux-vps
 shopt -s histappend
-HISTSIZE=11000
-HISTFILESIZE=11000
+HISTSIZE=15000
+HISTFILESIZE=15000
 
 # history -a -> appends to history file
 # history -c -> clears history from current session 
@@ -29,3 +33,8 @@ HISTFILESIZE=11000
 alias ahis="history -a"
 alias rhis="history -a; history -c; history -r;"
 
+##############
+# Other config 
+##############
+
+bind -x '"\C-l": clear'
