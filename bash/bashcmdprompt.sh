@@ -59,3 +59,5 @@ get_ros_distro(){
 export PS1="${debian_chroot:+($debian_chroot)}$FGRNB\u@\h$RS:$FBLEB\w $RS$FRED\$(parse_git_branch)\$(git_count_modified_files)\$(get_ros_distro)$RS\\$ "
 # export PS1="${debian_chroot:+($debian_chroot)}$FGRNB\u@\h$RS:$FBLEB\w $RS$FRED\$(parse_git_branch)$RS\\$ "
 
+### NNN shell depth indicator
+[ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
