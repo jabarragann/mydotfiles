@@ -1,6 +1,33 @@
-#NNN man pages: https://man.archlinux.org/man/community/nnn/nnn.1.en 
+##################################################
+## PLUGINS
+
+NNN_PLUG_INLINE='s:!bash -i*'
+NNN_PLUG="$NNN_PLUG_INLINE"
+export NNN_PLUG
+
+##################################################
+## Sync subshell $PWD 
+## https://github.com/jarun/nnn/wiki/Basic-use-cases#sync-subshell-pwd
+## Requires shell plugin `;s`.
+
+nnn_cd()                                                                                                   
+{
+    if ! [ -z "$NNN_PIPE" ]; then
+        printf "%s\0" "0c${PWD}" > "${NNN_PIPE}" !&
+    fi  
+}
+
+trap nnn_cd EXIT
+
+[ -n "$NNNLVL" ] && echo "NNN subshell" 
+
+####################
+## NNN man pages: https://man.archlinux.org/man/community/nnn/nnn.1.en 
+
 run_nnn()
 {
+
+
     # Block nesting of nnn in subshells
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
         echo "nnn is already running"
