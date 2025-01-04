@@ -1,3 +1,10 @@
+## TEMPORAL
+# For sim-assist experiments
+# export ROS_MASTER_URI=http://192.168.1.204:11311
+
+## nvim
+alias nvim="/home/juan95/programs/nvim-linux64/bin/nvim"
+
 ## BASH VI MODE
 set -o vi
 bind '"jk":vi-movement-mode'
@@ -8,9 +15,10 @@ export PATH=/usr/local/cuda-12.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/u
 export PATH=$PATH:$HOME/.local/bin
 
 ### NNN - If syntax is not correct NNN won't run. 
-export NNN_BMS="d:/home/juan95/research/discovery_grant"
-export NNN_BMS="$NNN_BMS;a:/home/juan95/research/accelnet_grant"
-export NNN_BMS="$NNN_BMS;r:/home/juan95/ros_ws;"
+export NNN_BM01="d:/home/juan95/research/discovery_grant"
+export NNN_BM02="a:/home/juan95/research/accelnet_grant"
+export NNN_BM03="r:/home/juan95/ros_ws"
+export NNN_BMS="$NNN_BM01;$NNN_BM02;$NNN_BM03"
 
 ## PROGRAMS
 alias blender="/home/juan1995/programs/blender-3.6.7-linux-x64/blender"
@@ -36,6 +44,7 @@ activate_ros_env(){
     source /opt/ros/noetic/setup.bash #ROS
     export PATH=$PATH:$HOME/research/ambf/bin/lin-x86_64 #AMBF
     source $HOME/research/ambf/build/devel/setup.bash #AMBF
+    source /home/juan95/ros_ws/ros1_ws_zed_crtk/devel/setup.bash #CRTK-ZED
 
     # Prompt needs to be resourced to show ros ws information. See bash/readme.md (Bug in prompt scripts). 
     # source $HOME/mydotfiles/bash/bashcmdprompt.sh
@@ -47,7 +56,8 @@ activate_ros2_env(){
     export ROS_DOMAIN_ID=10
     export ROS_LOCALHOST_ONLY=1
     
-    ros2_ws="/home/juan95/ros_ws/ros2_ws"
+    # ros2_ws="/home/juan95/ros_ws/ros2_ws"
+    ros2_ws="/home/juan95/ros_ws/ros2_error_injection"
     # Colcon tools
     if [[ -f /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash ]]; then
         source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
@@ -62,15 +72,9 @@ activate_ros2_env(){
 
     # ROS2 ws with AMBF
     source "$ros2_ws/install/setup.bash"
+    export PYTHONPATH=/home/juan95/research/_python_venvs/pytorch_ros2/lib/python3.8/site-packages:$PYTHONPATH
 }
 alias r2="activate_ros2_env"
 
 alias python="python3"
 
-
-## Specific for ISMR workshop 2024
-# ros
-# . /home/juan1995/learning/ros1_learning/package_creation_ws/devel/setup.bash
-
-## simulation assisted navigation
-# PATH=$PATH:~/research/discovery_grant/volumetric_drilling/registration_pipeline/pipelines
