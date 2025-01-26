@@ -8,6 +8,7 @@ NNN_PLUG="$NNN_PLUG_INLINE;$NNN_PLUG_DEFAULT"
 export NNN_PLUG
 
 export NNN_FIFO=/tmp/nnn.fifo
+
 ##################################################
 ## Sync subshell $PWD 
 ## https://github.com/jarun/nnn/wiki/Basic-use-cases#sync-subshell-pwd
@@ -24,13 +25,11 @@ trap nnn_cd EXIT
 
 [ -n "$NNNLVL" ] && echo "NNN subshell" 
 
-####################
+######################################################################
 ## NNN man pages: https://man.archlinux.org/man/community/nnn/nnn.1.en 
 
 run_nnn()
 {
-
-
     # Block nesting of nnn in subshells
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
         echo "nnn is already running"
@@ -65,14 +64,22 @@ run_nnn()
 }
 
 #NNN for cli environments
+
 # For a CLI-only environment, set NNN_OPENER to nuke. Use option -c.
-n ()
-{
-    export EDITOR=/usr/bin/vim
-    export VISUAL=vim
-    export NNN_OPENER=/usr/bin/vim
+n () {
+    # Check if nvim exists in ~/.local/bin; use vim as fallback
+    if [ -x ~/.local/bin/nvim ]; then
+        export EDITOR=~/.local/bin/nvim
+        export VISUAL=nvim
+        export NNN_OPENER=nvim
+    else
+        export EDITOR=/usr/bin/vim
+        export VISUAL=vim
+        export NNN_OPENER=/usr/bin/vim
+    fi
     run_nnn -c
 }
+
 ##NNN for visual studio code
 nn ()
 {
