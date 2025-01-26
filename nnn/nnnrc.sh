@@ -2,9 +2,12 @@
 ## PLUGINS
 
 NNN_PLUG_INLINE='s:!bash -i*'
-NNN_PLUG="$NNN_PLUG_INLINE"
+NNN_PLUG_DEFAULT='p:preview-tui;o:preview-tabbed'
+NNN_PLUG="$NNN_PLUG_INLINE;$NNN_PLUG_DEFAULT"
+
 export NNN_PLUG
 
+export NNN_FIFO=/tmp/nnn.fifo
 ##################################################
 ## Sync subshell $PWD 
 ## https://github.com/jarun/nnn/wiki/Basic-use-cases#sync-subshell-pwd
