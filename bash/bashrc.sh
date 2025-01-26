@@ -37,4 +37,4 @@ alias rhis="history -a; history -c; history -r;"
 # Other config 
 ##############
 
-bind -x '"\C-l": clear'
+bind -x '"\C-E": clear'

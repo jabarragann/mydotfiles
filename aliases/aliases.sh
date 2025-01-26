@@ -1,4 +1,5 @@
 # Base aliases
+alias cl='clear'
 alias ls='ls --color=auto'
 #alias dir='dir --color=auto'
 #alias vdir='vdir --color=auto'
