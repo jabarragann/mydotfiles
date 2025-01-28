@@ -1,5 +1,22 @@
+<!--toc:start-->
+- [Terminal configuration files](#terminal-configuration-files)
+- [Installation steps](#installation-steps)
+  - [Preparative steps](#preparative-steps)
+  - [Install my configs](#install-my-configs)
+  - [Compile nnn](#compile-nnn)
+  - [Setup vim plugs](#setup-vim-plugs)
+  - [Terminator config](#terminator-config)
+- [Additional configurations](#additional-configurations)
+  - [Local configurations](#local-configurations)
+  - [Anaconda config](#anaconda-config)
+  - [Update nvim install instructions](#update-nvim-install-instructions)
+  - [TODO Update kitty install instructions](#todo-update-kitty-install-instructions)
+- [TODO:](#todo)
+<!--toc:end-->
+
 # Terminal configuration files 
-Configuration files for terminal environment, [nnn][1] and vim.
+
+Configuration files for terminal environment, [nnn][1] nvim and vim.
 
 [1]: https://github.com/jarun/nnn
 
@@ -7,6 +24,7 @@ Configuration files for terminal environment, [nnn][1] and vim.
 1. nnn configurations 
 2. vim configurations 
 3. icon support in nnn with [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+
 
 
 # Installation steps 
@@ -70,6 +88,23 @@ conda config --set auto_activate_base false
 Reverse conda auto-activation
 ```
 conda init --reverse $SHELL
+```
+
+## Update nvim install instructions
+```
+sudo apt install xclip
+wget https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz
+tar -xf nvim-linux64.tar.gz nvim-linux64/
+ln -s /home/juan95/programs/nvim-linux64/bin/nvim /home/juan95/.local/bin/
+```
+
+## TODO Update kitty install instructions 
+```
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
+sudo update-alternatives --config x-terminal-emulator
 ```
 
 # TODO:
