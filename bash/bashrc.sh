@@ -17,6 +17,13 @@ if [ -f ~/.bashrc.local ]; then
     source ~/.bashrc.local
 fi
 
+###############
+## BASH VI MODE
+###############
+
+set -o vi
+bind '"jk":vi-movement-mode'
+
 ##############
 # bash history
 ##############
