@@ -9,9 +9,11 @@
 - [Additional configurations](#additional-configurations)
   - [Local configurations](#local-configurations)
   - [Anaconda config](#anaconda-config)
-  - [Update nvim install instructions](#update-nvim-install-instructions)
-  - [TODO Update kitty install instructions](#todo-update-kitty-install-instructions)
 - [TODO:](#todo)
+  - [TODO NNN](#todo-nnn)
+  - [TODO Update nvim install instructions](#todo-update-nvim-install-instructions)
+    - [LSP servers](#lsp-servers)
+  - [TODO Update kitty install instructions](#todo-update-kitty-install-instructions)
 <!--toc:end-->
 
 # Terminal configuration files 
@@ -90,22 +92,6 @@ Reverse conda auto-activation
 conda init --reverse $SHELL
 ```
 
-## Update nvim install instructions
-```
-sudo apt install xclip
-wget https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz
-tar -xf nvim-linux64.tar.gz nvim-linux64/
-ln -s /home/juan95/programs/nvim-linux64/bin/nvim /home/juan95/.local/bin/
-```
-
-## TODO Update kitty install instructions 
-```
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
-ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
-sudo update-alternatives --config x-terminal-emulator
-```
 
 # TODO:
 0. Split VIMRC file into multiple files
@@ -121,3 +107,39 @@ sudo update-alternatives --config x-terminal-emulator
 8. Add foldable sections to readme installation steps.
 9. Add FZF in installation script
 
+## TODO NNN
+```
+# plugin installation
+sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
+```
+
+## TODO Update nvim install instructions
+
+```
+sudo apt install xclip
+wget https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz
+tar -xf nvim-linux64.tar.gz nvim-linux64/
+ln -s /home/juan95/programs/nvim-linux64/bin/nvim /home/juan95/.local/bin/
+```
+### LSP servers
+Marksman
+```
+wget https://github.com/artempyanykh/marksman/releases/download/2024-12-18/marksman-linux-x64
+mv marksman-linux-x64 marksman
+chmod +x marksman 
+mv marksman ~/.local/bin/
+```
+
+Pyright
+```
+pip install pyright
+```
+
+## TODO Update kitty install instructions 
+```
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
+sudo update-alternatives --config x-terminal-emulator
+```
