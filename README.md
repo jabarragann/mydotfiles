@@ -142,4 +142,9 @@ ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
 ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
 sudo update-alternatives --config x-terminal-emulator
+
+##Kitty grab
+cd ~/.config/kitty
+git clone https://github.com/yurikhan/kitty_grab.git
+#copy kitty-grab.conf to .mydotfiles
 ```
