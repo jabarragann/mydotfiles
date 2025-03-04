@@ -30,6 +30,9 @@ inoremap <c-k> <Esc>:m .-2<CR>==gi
 vnoremap <c-j> :m '>+1<CR>gv=gv
 vnoremap <c-k> :m '<-2<CR>gv=gv
 
+nnoremap <S-h> :bprevious <CR>
+nnoremap <S-l> :bnext<CR>
+
 " Source vimrc
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
