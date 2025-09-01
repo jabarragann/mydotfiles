@@ -26,6 +26,7 @@ export NNN_BMS="$NNN_BM01;$NNN_BM02;$NNN_BM03"
 
 ## PROGRAMS
 alias blender="/home/juan1995/programs/blender-3.6.7-linux-x64/blender"
+alias blender43="/home/juan95/programs/blender-4.3.2-linux-x64/blender"
 alias hdfview="/home/juan1995/programs/HDFViewApp-3.3.1-ubuntu2004_64/HDFView/bin/HDFView"
 
 alias slicer="/home/juan95/programs/Slicer-5.6.0-linux-amd64/Slicer"
@@ -48,7 +49,7 @@ activate_ros_env(){
     source /opt/ros/noetic/setup.bash #ROS
     export PATH=$PATH:$HOME/research/ambf/bin/lin-x86_64 #AMBF
     source $HOME/research/ambf/build/devel/setup.bash #AMBF
-    source /home/juan95/ros_ws/ros1_ws_zed_crtk/devel/setup.bash #CRTK-ZED
+    # source /home/juan95/ros_ws/ros1_ws_zed_crtk/devel/setup.bash #CRTK-ZED
 
     # Prompt needs to be resourced to show ros ws information. See bash/readme.md (Bug in prompt scripts). 
     # source $HOME/mydotfiles/bash/bashcmdprompt.sh
