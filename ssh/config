@@ -1,17 +1,21 @@
 # Read more about SSH config files: https://linux.die.net/man/5/ssh_config
 
+## NOT SAFE to have ssh config on a public repo.
+## Kept here just as template for configuring servers
 #LCSR machines
 
 #Full daVinci
 Host dvrk_09 
     User jbarrag3
     HostName lcsr-dvrk-09.lcsr.jhu.edu
-    IdentityFile ~/.ssh/id_lcsr_dvrk_09
+    IdentityFile ~/.ssh/id_lcsr_dvrk_09 ## Private key -- Public has to be shared with the server ahead of time.
+
 #dvrk - Jintan pc
 Host dvrk_05 
     User jbarrag3
     HostName lcsr-dvrk-05.lcsr.jhu.edu
     IdentityFile ~/.ssh/id_lcsr_dvrk_05
+
 # GPU computer
 Host thin7 
     User jbarrag3
