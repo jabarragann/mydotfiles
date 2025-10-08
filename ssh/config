@@ -2,8 +2,14 @@
 
 ## NOT SAFE to have ssh config on a public repo.
 ## Kept here just as template for configuring servers
-#LCSR machines
 
+## Steps to add keys
+# 1. Copy public key to ~/.ssh/authorized_keys 
+# 2. ssh -i private_key user@hostname
+# 3. Create an entry in the config. The identity file is the private key that will be used.
+
+
+## LCSR machines
 #Full daVinci
 Host dvrk_09 
     User jbarrag3
