@@ -1,9 +1,15 @@
 #!/bin/bash
 
+LOCAL_BIN=$HOME/.local/bin
 mydotfiles="$HOME/mydotfiles"
 programsdir="$HOME/programs/"
+
 mkdir -v -p $programsdir
 
+if [ ! -d $LOCAL_BIN  ]; then
+    mkdir -p $LOCAL_BIN
+    echo "Creating local bin folder: $LOCAL_BIN"
+fi
 
 # Create symbolic links
 echo -e " \n <-----Creating symbolic links-----> \n"
@@ -32,24 +38,18 @@ echo | fc-list | grep "Hack"
 
 # NNN INSTALLATION
 ##################
-
 echo -e "\n <-----Downloading nnn -----> \n"
+nnn_version="5.1"
+wget -O $programsdir/nnn-v${nnn_version}.tar.gz -nv https://github.com/jarun/nnn/releases/download/v${nnn_version}/nnn-v${nnn_version}.tar.gz
+tar xf $programsdir/nnn-v${nnn_version}.tar.gz -C $programsdir 
 
-wget -O $programsdir/nnn-v5.0.tar.gz -nv https://github.com/jarun/nnn/releases/download/v5.0/nnn-v5.0.tar.gz
-tar xf $programsdir/nnn-v5.0.tar.gz -C $programsdir 
-
-LOCAL_BIN=$HOME/.local/bin
-if [ ! -d $LOCAL_BIN  ]; then
-    mkdir -p $LOCAL_BIN
-    echo "Creating local bin folder: $LOCAL_BIN"
-fi
 
 echo -e "\n <-----Compiling nnn -----> \n"
 
 # Compile and install nnn
-cd $programsdir/nnn-5.0
+cd $programsdir/nnn-${nnn_version}
 make O_NERD=1
-cp ./nnn $LOCAL_BIN  
+ln -sf $programsdir/nnn-${nnn_version}/nnn $LOCAL_BIN 
 
 # FZF INSTALLATION
 ##################

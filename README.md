@@ -1,19 +1,19 @@
+# Master CLI configuration 
+
 <!--toc:start-->
+- [Master CLI configuration](#master-cli-configuration)
 - [Terminal configuration files](#terminal-configuration-files)
-- [Installation steps](#installation-steps)
+- [Installation](#installation)
   - [Preparative steps](#preparative-steps)
   - [Install my configs](#install-my-configs)
-  - [Compile nnn](#compile-nnn)
-  - [Setup vim plugs](#setup-vim-plugs)
-  - [Terminator config](#terminator-config)
 - [Additional configurations](#additional-configurations)
+  - [Compile nnn](#compile-nnn)
+  - [Setup vim plugin manager vim-plug](#vim-plugin-manager-vim-plug)
+  - [Terminator config](#terminator-config)
   - [Local configurations](#local-configurations)
   - [Anaconda config](#anaconda-config)
+  - [kitty install instructions](#kitty-install-instructions)
 - [TODO:](#todo)
-  - [TODO NNN](#todo-nnn)
-  - [TODO Update nvim install instructions](#todo-update-nvim-install-instructions)
-    - [LSP servers](#lsp-servers)
-  - [TODO Update kitty install instructions](#todo-update-kitty-install-instructions)
 <!--toc:end-->
 
 # Terminal configuration files 
@@ -23,13 +23,14 @@ Configuration files for terminal environment, [nnn][1] nvim and vim.
 [1]: https://github.com/jarun/nnn
 
 **Included features**
-1. nnn configurations 
-2. vim configurations 
-3. icon support in nnn with [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+1. [nnn configurations](#compile-nnn) 
+2. icon support in nnn with [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+3. [vim configurations](#vim-plugin-manager-vim-plug)
+4. [Kitty config setup](#kitty-install-instructions)
+5. nvim-configuration - see [here](/nvim/nvim_notes_juan.md) 
 
 
-
-# Installation steps 
+# Installation
 
 ## Preparative steps
 
@@ -47,6 +48,8 @@ sudo ./install_cmd_utilities.sh #Install dependencies
 3. Remove history limits in default bashrc (HISTSIZE, HISTFILESIZE).
 
 
+# Additional configurations
+
 ## Compile nnn
 
 ```bash
@@ -59,7 +62,14 @@ cp ./nnn ~/.local/bin/
 sudo make O_NERD=1 strip install
 ```
 
-## Setup vim plugs
+Optional install nnn plugins (Use the getplugs script) 
+```
+sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
+```
+
+## Vim plugin manager, vim-plug
+
+More documentation on [plugin-config](/vim/vim_plugins.md)
 
 1. Install [vim-plug](https://github.com/junegunn/vim-plug)
 ```bash
@@ -72,8 +82,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 ## Terminator config
 Add key bindings to [terminator config](./terminator/terminator_config) file in `$HOME/.config/terminator/config`
-
-# Additional configurations
 
 ## Local configurations
 Add all local configurations in `~/.bashrc.local`. This file is loaded by default if it exists. In cases where the local files wants to be tracked created a symlink to a file in mydotfiles. For example:
@@ -93,6 +101,36 @@ conda init --reverse $SHELL
 ```
 
 
+## kitty install instructions 
+
+1. Install Kitty
+Instructions from: https://sw.kovidgoyal.net/kitty/binary/
+```
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+```
+
+2. Make kitty default terminal
+Note: In ubuntu default terminal can be opened with `ctrl+alt+t`
+```
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
+sudo update-alternatives --config x-terminal-emulator
+```
+
+3. Important Kitty plugins
+
+VIM kitty navigator
+```
+https://github.com/knubie/vim-kitty-navigator
+```
+
+Kitty grab (Not actively used in my setup)
+```
+cd ~/.config/kitty
+git clone https://github.com/yurikhan/kitty_grab.git
+#copy kitty-grab.conf to .mydotfiles
+```
+
 # TODO:
 0. Split VIMRC file into multiple files
    1.  <https://vi.stackexchange.com/questions/5441/is-it-possible-and-useful-to-split-vimrc>
@@ -105,46 +143,3 @@ conda init --reverse $SHELL
 6. Add **terminator keybindings to mydotfiles**
 7. Change shortcuts to open windows in vim to the ones in terminator
 8. Add foldable sections to readme installation steps.
-9. Add FZF in installation script
-
-## TODO NNN
-```
-# plugin installation
-sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
-```
-
-## TODO Update nvim install instructions
-
-```
-sudo apt install xclip
-wget https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz
-tar -xf nvim-linux64.tar.gz nvim-linux64/
-ln -s /home/juan95/programs/nvim-linux64/bin/nvim /home/juan95/.local/bin/
-```
-### LSP servers
-Marksman
-```
-wget https://github.com/artempyanykh/marksman/releases/download/2024-12-18/marksman-linux-x64
-mv marksman-linux-x64 marksman
-chmod +x marksman 
-mv marksman ~/.local/bin/
-```
-
-Pyright
-```
-pip install pyright
-```
-
-## TODO Update kitty install instructions 
-```
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
-ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
-sudo update-alternatives --config x-terminal-emulator
-
-##Kitty grab
-cd ~/.config/kitty
-git clone https://github.com/yurikhan/kitty_grab.git
-#copy kitty-grab.conf to .mydotfiles
-```
