@@ -17,9 +17,14 @@ ln -s $HOME/mydotfiles/git/gitconfig ~/.gitconfig
 ln -s $HOME/mydotfiles/vim/vimrc ~/.vimrc
 ln -s $HOME/mydotfiles/ssh/config $HOME/.ssh/config
 ln -s $HOME/mydotfiles/aliases/aliases.sh $HOME/.aliases
+ln -s $HOME/mydotfiles/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 
 # Add juan configs to bashrc
 echo 'source $HOME/mydotfiles/bash/bashrc.sh' >> ~/.bashrc
+
+# NVIM CONFIGURATION
+#####################
+git clone git@github.com:jabarragann/neovim_config.git ~/.config/nvim
 
 # INSTALL NERD FONTS
 #####################

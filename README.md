@@ -8,7 +8,7 @@
   - [Install my configs](#install-my-configs)
 - [Additional configurations](#additional-configurations)
   - [Compile nnn](#compile-nnn)
-  - [Setup vim plugin manager vim-plug](#vim-plugin-manager-vim-plug)
+  - [Vim plugin manager, vim-plug](#vim-plugin-manager-vim-plug)
   - [Terminator config](#terminator-config)
   - [Local configurations](#local-configurations)
   - [Anaconda config](#anaconda-config)
@@ -120,6 +120,7 @@ sudo update-alternatives --config x-terminal-emulator
 3. Important Kitty plugins
 
 VIM kitty navigator
+Automatically installed with nvim. See [nvim notes](./nvim/nvim_notes_juan.md)
 ```
 https://github.com/knubie/vim-kitty-navigator
 ```

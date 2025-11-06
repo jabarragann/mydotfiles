@@ -5,8 +5,8 @@
   - [Shortcuts and usage.](#shortcuts-and-usage)
   - [NVIM install](#nvim-install)
   - [LSP servers and configurations](#lsp-servers-and-configurations)
-    - [Marksman - Markdown](#marksman-markdown)
-    - [Pyright - Python](#pyright-python)
+    - [Marksman - Markdown](#marksman---markdown)
+    - [Pyright - Python](#pyright---python)
 <!--toc:end-->
 
 
@@ -15,12 +15,23 @@
 
 ## NVIM install
 
+My nvim configuration repository: [neovim_config](https://github.com/jabarragann/neovim_config)
+
+Download config
+```
+git clone git@github.com:jabarragann/neovim_config.git ~/.config/nvim
+```
+
+Install nvim binary
 ```
 sudo apt install xclip
-wget https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz
-tar -xf nvim-linux64.tar.gz nvim-linux64/
-ln -s /home/juan95/programs/nvim-linux64/bin/nvim /home/juan95/.local/bin/
+cd ~/programs
+wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.tar.gz
+tar -xf nvim-linux-x86_64.tar.gz nvim-linux-x86_64/
+ln -sf  ln -sf $HOME/programs/nvim-linux-x86_64/bin/nvim $HOME/.local/bin/
 ```
+
+Notes: 0.10.4 is the latest official version to work with ubuntu 20.04.
 
 ## LSP servers and configurations
 
