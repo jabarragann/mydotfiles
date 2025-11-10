@@ -1,3 +1,6 @@
+### Kitty dependencies - https://github.com/kovidgoyal/kitty/issues/1567 
+sudo apt-get install kitty-terminfo
+
 ### NNN dependencies
 sudo apt-get install pkg-config libncursesw5-dev libreadline-dev
 
