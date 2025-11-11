@@ -26,9 +26,20 @@ Install nvim binary
 ```
 sudo apt install xclip
 cd ~/programs
+```
+Current:
+```
+NVIM_VER="v0.11.5"
+wget -O nvim-${NVIM_VER}.tar.gz "https://github.com/neovim/neovim/releases/download/${NVIM_VER}/nvim-linux-x86_64.tar.gz"
+tar -xf nvim-${NVIM_VER}.tar.gz -C "nvim-${NVIM_VER}"
+ln -sf "$HOME/programs/nvim-${NVIM_VER}/bin/nvim" "$HOME/.local/bin/nvim"
+```
+
+Legacy:
+```
 wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.tar.gz
 tar -xf nvim-linux-x86_64.tar.gz nvim-linux-x86_64/
-ln -sf  ln -sf $HOME/programs/nvim-linux-x86_64/bin/nvim $HOME/.local/bin/
+ln -sf $HOME/programs/nvim-linux-x86_64/bin/nvim $HOME/.local/bin/
 ```
 
 Notes: 0.10.4 is the latest official version to work with ubuntu 20.04.

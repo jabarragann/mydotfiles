@@ -2,9 +2,6 @@
 # For sim-assist experiments
 # export ROS_MASTER_URI=http://192.168.1.204:11311
 
-## nvim
-alias nvim="/home/juan95/programs/nvim-linux64/bin/nvim"
-
 ## BASH VI MODE
 set -o vi
 bind '"jk":vi-movement-mode'
@@ -13,8 +10,8 @@ bind '"jk":vi-movement-mode'
 export LD_LIBRARY_PATH=/usr/local/lib
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
-export PATH=/usr/local/cuda-12.4/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-12.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH
 
 export PATH=$PATH:$HOME/.local/bin
 
