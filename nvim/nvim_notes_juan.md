@@ -20,6 +20,7 @@ My nvim configuration repository: [neovim_config](https://github.com/jabarragann
 Download config
 ```
 git clone git@github.com:jabarragann/neovim_config.git ~/.config/nvim
+mkdir $HOME/.config/kitty/
 ```
 
 Install nvim binary
