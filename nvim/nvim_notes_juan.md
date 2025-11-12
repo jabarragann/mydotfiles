@@ -19,6 +19,8 @@ My nvim configuration repository: [neovim_config](https://github.com/jabarragann
 
 Download config
 ```
+git clone https://github.com/jabarragann/nvim_config.git ~/.config/nvim
+# or 
 git clone git@github.com:jabarragann/neovim_config.git ~/.config/nvim
 mkdir $HOME/.config/kitty/
 ```
