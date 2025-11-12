@@ -15,9 +15,10 @@ fi
 echo -e " \n <-----Creating symbolic links-----> \n"
 ln -s $HOME/mydotfiles/git/gitconfig ~/.gitconfig
 ln -s $HOME/mydotfiles/vim/vimrc ~/.vimrc
-ln -s $HOME/mydotfiles/ssh/config $HOME/.ssh/config
 ln -s $HOME/mydotfiles/aliases/aliases.sh $HOME/.aliases
 ln -s $HOME/mydotfiles/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
+# Not secure to store ssh keys in public repo.
+# ln -s $HOME/mydotfiles/ssh/config $HOME/.ssh/config
 
 # Add juan configs to bashrc
 echo 'source $HOME/mydotfiles/bash/bashrc.sh' >> ~/.bashrc
