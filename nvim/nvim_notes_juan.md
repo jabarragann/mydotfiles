@@ -47,7 +47,10 @@ Notes: 0.10.4 is the latest official version to work with ubuntu 20.04.
 ```
 wget https://github.com/artempyanykh/marksman/releases/download/2024-12-18/marksman-linux-x64
 mv marksman-linux-x64 marksman
-chmod +x marksman 
+chmod +x marksman
+ln -sf $HOME/programs/marksman ~/.local/bin/
+
+# old
 mv marksman ~/.local/bin/
 ```
 
