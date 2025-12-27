@@ -16,7 +16,11 @@ echo -e " \n <-----Creating symbolic links-----> \n"
 ln -s $HOME/mydotfiles/git/gitconfig ~/.gitconfig
 ln -s $HOME/mydotfiles/vim/vimrc ~/.vimrc
 ln -s $HOME/mydotfiles/aliases/aliases.sh $HOME/.aliases
+
 ln -s $HOME/mydotfiles/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
+## -n option is needed to prevent weird behaviours when symlinking the folder
+ln -snf $HOME/mydotfiles/kitty/custom $HOME/.config/kitty/kitty_custom
+
 # Not secure to store ssh keys in public repo.
 # ln -s $HOME/mydotfiles/ssh/config $HOME/.ssh/config
 
