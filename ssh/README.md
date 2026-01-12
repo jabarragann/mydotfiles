@@ -9,6 +9,9 @@ NOT safe to have ssh config on a public repo.
 
 ```
 1. Copy public key to ~/.ssh/authorized_keys 
+
 2. ssh -i private_key user@hostname
+ssh-copy-id -i id_ed25519_key.pub user@server_ip
+
 3. Create an entry in the config. The identity file is the private key that will be used.
 ```
