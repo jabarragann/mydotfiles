@@ -32,3 +32,6 @@ alias sbrc="echo 'sourcing bashrc...'; source ~/.bashrc"
 #conda aliases
 alias cae='conda activate'
 alias cde='conda deactivate'
+
+# Python aliases
+alias pydebug="python -m debugpy --listen 5678 --wait-for-client"
