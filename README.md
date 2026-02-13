@@ -37,7 +37,7 @@ Configuration files for terminal environment, [nnn][1] nvim and vim.
 1. Enable github ssh
 2. Clone mydotfiles repository.
 3. Download Kitty
-4. Setup Nvim configuration.
+4. Setup Nvim configuration (Open it once to download pane navigation utils for kitty.
 
 ## Install my configs
 
