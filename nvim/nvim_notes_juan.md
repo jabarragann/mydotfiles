@@ -55,6 +55,37 @@ mv marksman ~/.local/bin/
 ```
 
 ### Pyright - Python
+
+#### Installation
+With sudo access
+```
+sudo apt update
+sudo apt install nodejs npm
+sudo npm install -g pyright
+```
+
+Without sudo access
+```
+npm install -g pyright
+```
+
+if npm is not available
 ```
 pip install pyright
 ```
+
+#### Configuration inside python project:
+
+With pyrightconfig.json file:
+```json
+{
+  "venvPath": "/home/juan95/pyvenv/",
+  "venv": "pose_est"
+}
+```
+
+Verify with
+```
+pyright --verbose
+```
+
