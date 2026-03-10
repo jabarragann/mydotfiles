@@ -45,3 +45,24 @@ alias rhis="history -a; history -c; history -r;"
 ##############
 
 bind -x '"\C-E": clear'
+
+
+##############
+# FZF Config 
+##############
+
+## More complex version: uses fd, rg, or find as fallback. 
+export FZF_CTRL_T_COMMAND='
+git rev-parse --is-inside-work-tree >/dev/null 2>&1 &&
+git ls-files --cached --modified --others --exclude-standard ||
+{ command -v fdfind >/dev/null && fdfind --type f --follow; \
+  command -v fd >/dev/null && fd --type f --follow; \
+  command -v rg >/dev/null && rg --files; \
+  find -L . -mindepth 1 \( -path "*/.*" -prune \) -o -print 2>/dev/null; }
+'
+
+## Simple version: requires fdfind (fd) to be installed
+# export FZF_CTRL_T_COMMAND='
+# git rev-parse --is-inside-work-tree >/dev/null 2>&1 && 
+# git ls-files --cached --modified --others --exclude-standard || 
+# fdfind --type f'

@@ -7,5 +7,12 @@ sudo apt-get install pkg-config libncursesw5-dev libreadline-dev
 ### My utilities
 sudo apt install vim autojump trash-cli cmatrix tldr build-essential
 
+### FZF recommendations
+## fd-find (fd), find alternative.
+## ripgrep (rg), grep alternative.
+
+sudo apt install fd-find 
+sudo apt install ripgrep 
+
 ### VIM access to clipboard - https://superuser.com/questions/436890/cant-copy-to-clipboard-from-vim
 sudo apt-get install vim-gtk
