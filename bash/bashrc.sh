@@ -17,12 +17,6 @@ if [ -f ~/.bashrc.local ]; then
     source ~/.bashrc.local
 fi
 
-###############
-## BASH VI MODE
-###############
-
-set -o vi
-bind '"jk":vi-movement-mode'
 
 ##############
 # bash history
@@ -66,3 +60,27 @@ git ls-files --cached --modified --others --exclude-standard ||
 # git rev-parse --is-inside-work-tree >/dev/null 2>&1 && 
 # git ls-files --cached --modified --others --exclude-standard || 
 # fdfind --type f'
+
+__fzf_git_files() {
+    if ! command -v batcat >/dev/null 2>&1; then
+        echo "batcat not found. Please install bat (apt install bat)."
+        return
+    fi
+
+    if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        local file
+        file=$(git ls-files | fzf --preview 'batcat --style=numbers --color=always {}')
+        [[ -n $file ]] && READLINE_LINE+="$file"
+    # else
+    #     bind '"\C-p": previous-history'
+    fi
+}
+
+###############
+## BASH VI MODE
+###############
+
+set -o vi
+bind '"jk":vi-movement-mode'
+bind -m vi-insert -x '"\C-p":__fzf_git_files'
+
