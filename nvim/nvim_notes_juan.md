@@ -45,14 +45,18 @@ Notes: 0.10.4 is the latest official version to work with ubuntu 20.04.
 
 ### Marksman - Markdown
 ```
-wget https://github.com/artempyanykh/marksman/releases/download/2024-12-18/marksman-linux-x64
-mv marksman-linux-x64 marksman
-chmod +x marksman
-ln -sf $HOME/programs/marksman ~/.local/bin/
-
-# old
-mv marksman ~/.local/bin/
+MARKSMAN_VERSION=2026-02-08
+wget https://github.com/artempyanykh/marksman/releases/download/${MARKSMAN_VERSION}/marksman-linux-x64
+mv marksman-linux-x64 marksman_${MARKSMAN_VERSION}
+chmod +x marksman_${MARKSMAN_VERSION}
+ln -sf $HOME/programs/marksman_${MARKSMAN_VERSION} ~/.local/bin/marksman
 ```
+
+**Old tested versions**
+```
+wget https://github.com/artempyanykh/marksman/releases/download/2024-12-18/marksman-linux-x64
+```
+
 
 ### Pyright - Python
 

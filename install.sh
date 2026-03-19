@@ -49,7 +49,7 @@ echo | fc-list | grep "Hack"
 # NNN INSTALLATION
 ##################
 echo -e "\n <-----Downloading nnn -----> \n"
-nnn_version="5.1"
+nnn_version="5.2" ## Blue Hawaii
 wget -O $programsdir/nnn-v${nnn_version}.tar.gz -nv https://github.com/jarun/nnn/releases/download/v${nnn_version}/nnn-v${nnn_version}.tar.gz
 tar xf $programsdir/nnn-v${nnn_version}.tar.gz -C $programsdir 
 
