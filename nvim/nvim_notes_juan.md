@@ -57,14 +57,25 @@ ln -sf $HOME/programs/marksman_${MARKSMAN_VERSION} ~/.local/bin/marksman
 wget https://github.com/artempyanykh/marksman/releases/download/2024-12-18/marksman-linux-x64
 ```
 
+## NodeJS TOOLS
+Install nvm (analog to conda) and latest node.js
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+nvm list-remote
+nvm install --lts
+```
+
+### Copilot
+Enable copilot in nvim with:
+```
+:Copilot setup
+```
 
 ### Pyright - Python
 
 #### Installation
 With sudo access
 ```
-sudo apt update
-sudo apt install nodejs npm
 sudo npm install -g pyright
 ```
 
