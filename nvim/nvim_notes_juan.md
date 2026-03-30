@@ -5,8 +5,12 @@
   - [Shortcuts and usage.](#shortcuts-and-usage)
   - [NVIM install](#nvim-install)
   - [LSP servers and configurations](#lsp-servers-and-configurations)
-    - [Marksman - Markdown](#marksman---markdown)
-    - [Pyright - Python](#pyright---python)
+    - [Marksman - Markdown](#marksman-markdown)
+  - [NodeJS TOOLS](#nodejs-tools)
+    - [Copilot](#copilot)
+    - [Pyright - Python](#pyright-python)
+      - [Installation](#installation)
+      - [Configuration inside python project:](#configuration-inside-python-project)
 <!--toc:end-->
 
 
