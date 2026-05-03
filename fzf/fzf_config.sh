@@ -18,9 +18,16 @@ fi
 
 preview_program="$(command -v bat || command -v batcat)"
 
+# With preview
+# export FZF_CTRL_T_OPTS="
+# --walker-skip .git,node_modules,target
+# --preview '${preview_program} -n --color=always {}'
+# --bind 'ctrl-/:change-preview-window(down|hidden|)'
+# "
+
+# with no preview
 export FZF_CTRL_T_OPTS="
 --walker-skip .git,node_modules,target
---preview '${preview_program} -n --color=always {}'
 --bind 'ctrl-/:change-preview-window(down|hidden|)'
 "
 
