@@ -27,7 +27,10 @@ source ~/mydotfiles/zsh-mac/zshprompt.zsh
 ## Tools
 
 ## Autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+# Homebrew installation
+[[ -f /opt/homebrew/etc/profile.d/autojump.sh ]] && source /opt/homebrew/etc/profile.d/autojump.sh
+# Linux ubuntu installation
+[[ -f /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 
 ## Zsh plugins -> vim-mode
 function zvm_config() {
@@ -45,3 +48,6 @@ source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 ## FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source $HOME/mydotfiles/fzf/fzf_config.sh
+
