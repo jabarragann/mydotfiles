@@ -1,0 +1,53 @@
+## Path to local executables
+export PATH="$HOME/.local/bin:$PATH"
+
+## History
+HISTFILE=~/.history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt inc_append_history
+setopt HIST_SAVE_NO_DUPS
+
+## Autocomplete
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+## Sources
+source $HOME/mydotfiles/aliases/aliases.sh
+source $HOME/mydotfiles/nnn/nnnrc.sh
+
+## Prompt
+source ~/mydotfiles/zsh-mac/zshprompt.zsh
+
+## Tools
+
+## Autojump
+# Homebrew installation
+[[ -f /opt/homebrew/etc/profile.d/autojump.sh ]] && source /opt/homebrew/etc/profile.d/autojump.sh
+# Linux ubuntu installation
+[[ -f /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
+
+## Zsh plugins -> vim-mode
+function zvm_config() {
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+  ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+}
+
+# vim-mode will override the default ^R binding, so we need to rebind it after vim-mode is initialized
+function zvm_after_init() {
+  bindkey -M viins '^R' fzf-history-widget
+  bindkey -M vicmd '^R' fzf-history-widget
+}
+
+source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+## FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source $HOME/mydotfiles/fzf/fzf_config.sh
+
