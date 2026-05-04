@@ -42,6 +42,7 @@ bind -x '"\C-E": clear'
 
 
 ## FZF that hasn't been migrated
+source $HOME/mydotfiles/fzf/fzf_config.sh
 
 __fzf_git_files() {
     if ! command -v batcat >/dev/null 2>&1; then
