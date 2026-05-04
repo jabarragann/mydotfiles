@@ -22,7 +22,7 @@ source $HOME/mydotfiles/aliases/aliases.sh
 source $HOME/mydotfiles/nnn/nnnrc.sh
 
 ## Prompt
-source ~/mydotfiles/zsh-mac/zshprompt.zsh
+source ~/mydotfiles/zsh/zshprompt.zsh
 
 ## Tools
 

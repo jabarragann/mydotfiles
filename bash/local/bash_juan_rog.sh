@@ -23,9 +23,8 @@ export NNN_BMS="$NNN_BM01;$NNN_BM02;$NNN_BM03"
 
 ## PROGRAMS
 alias blender="/home/juan1995/programs/blender-3.6.7-linux-x64/blender"
-alias blender43="/home/juan95/programs/blender-4.3.2-linux-x64/blender"
 alias hdfview="/home/juan1995/programs/HDFViewApp-3.3.1-ubuntu2004_64/HDFView/bin/HDFView"
-
+alias blender43="/home/juan95/programs/blender-4.3.2-linux-x64/blender"
 alias slicer="/home/juan95/programs/Slicer-5.8.1-linux-amd64/Slicer"
 # alias slicer="/home/juan95/programs/Slicer-5.6.2-linux-amd64/Slicer"
 
