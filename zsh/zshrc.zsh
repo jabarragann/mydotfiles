@@ -2,11 +2,24 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 ## History
-HISTFILE=~/.history
+# Resources: https://github.com/rothgar/mastering-zsh/blob/master/docs/config/history.md
+
+HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
-setopt inc_append_history
+
+# Do not write a duplicate event to the history file.
 setopt HIST_SAVE_NO_DUPS
+# Append to history instead of overwriting
+setopt APPEND_HISTORY
+# Share history between terminals
+setopt SHARE_HISTORY
+# Don't save duplicates
+setopt HIST_IGNORE_ALL_DUPS
+# Ignore commands starting with a space
+setopt HIST_IGNORE_SPACE
+# Save commands immediately
+setopt INC_APPEND_HISTORY
 
 ## Autocomplete
 autoload -U compinit && compinit
