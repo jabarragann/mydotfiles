@@ -21,3 +21,7 @@ export NNN_BMS="$NNN_BM01;$NNN_BM02;$NNN_BM03"
 ## PROGRAMS
 alias blender="/home/juan95/programs/blender-4.5.10-linux-x64/blender"
 alias slicer="/home/juan95/programs/Slicer-5.8.1-linux-amd64/Slicer"
+
+## ROS2
+export ROS_DOMAIN_ID=10
+export ROS_LOCALHOST_ONLY=1
