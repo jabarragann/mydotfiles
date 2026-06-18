@@ -24,4 +24,7 @@ alias slicer="/home/juan95/programs/Slicer-5.8.1-linux-amd64/Slicer"
 
 ## ROS2
 export ROS_DOMAIN_ID=10
+export ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST
+
+# old way of defining localhost only
 export ROS_LOCALHOST_ONLY=1
