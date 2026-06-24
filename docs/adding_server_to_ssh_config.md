@@ -10,6 +10,16 @@ cat .ssh/id_ed25519.pub | ssh foobar@remote 'cat >> ~/.ssh/authorized_keys'
 ```
 
 Add server to `.ssh/config`
+```
+Host surpass_01_juan 
+    HostName 
+    User jbarrag3 
+    IdentityFile ~/.ssh/ed25519_surpass_01
+    PubkeyAuthentication no
+    PreferredAuthentications password
+
+```
+
 
 ## TODO
 

@@ -8,12 +8,15 @@
   - [Install my configs](#install-my-configs)
 - [Additional configurations](#additional-configurations)
   - [Compile nnn](#compile-nnn)
+    - [Troubleshooting](#troubleshooting)
   - [Vim plugin manager, vim-plug](#vim-plugin-manager-vim-plug)
   - [Terminator config](#terminator-config)
   - [Local configurations](#local-configurations)
   - [Anaconda config](#anaconda-config)
   - [kitty install instructions](#kitty-install-instructions)
+- [TODO zsh setup](#todo-zsh-setup)
 - [TODO:](#todo)
+- [Older TODO](#older-todo)
 <!--toc:end-->
 
 # Terminal configuration files 
@@ -70,6 +73,18 @@ Optional install nnn plugins (Use the getplugs script)
 ```
 sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
 ```
+
+### Troubleshooting
+<details>
+<summary><strong>nnn Permission Denied Fix (FIFO Conflict)</strong></summary>
+
+When running multiple users or an existing instance of `nnn`, you may encounter a `Permission denied` error on startup. This happens because `nnn` defaults to creating a shared pipe at `/tmp/nnn.fifo`, which can cause a permission collision if another user already owns it.
+Solution: Isolate the FIFO pipe to your own user directory by setting the `NNN_FIFO` environment variable.
+```
+export NNN_FIFO="$HOME/.config/nnn/nnn.fifo"
+```
+</details>
+
 
 ## Vim plugin manager, vim-plug
 
@@ -136,15 +151,22 @@ git clone https://github.com/yurikhan/kitty_grab.git
 #copy kitty-grab.conf to .mydotfiles
 ```
 
+# TODO zsh setup
+- [ ] add sourcing statement to .zshrc.
+- [ ] download vim-mode.
+- [ ] download nvim.
+
 # TODO:
-0. Split VIMRC file into multiple files
-   1.  <https://vi.stackexchange.com/questions/5441/is-it-possible-and-useful-to-split-vimrc>
-1. Add terminator settings automatically to config.
-2. In installation script check if `.local` directory is available if not create it.
-1. Easy way to setup my github ssh access
-2. Add shebangs to my scripts
-4. Add compiled nnn to path
-5. Add way of cleaning/removing all software
-6. Add **terminator keybindings to mydotfiles**
-7. Change shortcuts to open windows in vim to the ones in terminator
-8. Add foldable sections to readme installation steps.
+- [ ] Advance install script 
+  - [ ] Ask which components to install
+  - [ ] Install nvim
+  - [ ] Install kitty
+- [ ] figure out a way to test install in docker container or other solution
+
+# Older TODO
+- [ ] Split VIMRC file into multiple files
+  - <https://vi.stackexchange.com/questions/5441/is-it-possible-and-useful-to-split-vimrc>
+- [ ] Add terminator settings automatically to config.
+- [ ] Add way of cleaning/removing all software
+- [ ] Add **terminator keybindings to mydotfiles**
+- [ ] Change shortcuts to open windows in vim to the ones in terminator

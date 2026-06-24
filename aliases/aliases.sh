@@ -20,14 +20,22 @@ alias gcreadme="git add README.md; git commit -m \"Update README.md\""
 
 # Vim aliases
 alias v="vim"
+
 # Other aliases
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
 #open bashrc in linux
 alias vbrc="nvim ~/.bashrc"
 alias vbrc_local="nvim ~/.bashrc.local"
 alias sbrc="echo 'sourcing bashrc...'; source ~/.bashrc"
+
+# ZSH aliases
+alias vzrc="nvim ~/.zshrc"
+alias vzrc_local="nvim ~/.zshrc.local"
+alias szrc="echo 'sourcing zshrc...'; source ~/.zshrc"
 
 #conda aliases
 alias cae='conda activate'

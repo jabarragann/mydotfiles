@@ -31,6 +31,13 @@ echo 'source $HOME/mydotfiles/bash/bashrc.sh' >> ~/.bashrc
 #####################
 git clone git@github.com:jabarragann/neovim_config.git ~/.config/nvim
 
+# ZSH TOOLS
+############
+
+mkdir -v -p $HOME/.zsh/plugins
+git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.zsh/plugins/zsh-vi-mode
+
+
 # INSTALL NERD FONTS
 #####################
 
