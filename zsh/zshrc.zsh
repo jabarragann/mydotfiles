@@ -21,6 +21,7 @@ setopt HIST_IGNORE_SPACE
 # Save commands immediately
 setopt INC_APPEND_HISTORY
 
+
 ## Autocomplete
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
@@ -64,3 +65,6 @@ source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 source $HOME/mydotfiles/fzf/fzf_config.sh
 
+## Go to previous/next history item with ^P/^N
+bindkey '^P' up-history
+bindkey '^N' down-history
