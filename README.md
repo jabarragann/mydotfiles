@@ -144,6 +144,12 @@ Automatically installed with nvim. See [nvim notes](./nvim/nvim_notes_juan.md)
 https://github.com/knubie/vim-kitty-navigator
 ```
 
+To enable navigation during ssh sessions add `forward_remote_control yes` to
+`~/.config/kitty/ssh.conf`.
+
+https://sw.kovidgoyal.net/kitty/kittens/ssh/#opt-kitten-ssh.forward_remote_control
+
+
 Kitty grab (Not actively used in my setup)
 ```
 cd ~/.config/kitty
