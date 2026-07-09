@@ -42,8 +42,13 @@ run_nnn()
     # use a custom path, i.e. set NNN_TMPFILE *exactly* as follows:
     #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
     export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
     # TRASH CLI (n=1)
-    export NNN_TRASH=1
+    if [[ "$OSTYPE" == "darwin"* ]]; then                                                                                                                                                     
+      export NNN_TRASH="trash"
+   else # for linux                                                                                                                                                                                      
+       export NNN_TRASH=1 # trash-cli
+   fi        
 
     # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
     # stty start undef
