@@ -1,7 +1,7 @@
 ##################################################
 ## PLUGINS
 
-NNN_PLUG_INLINE='s:!bash -i*'
+NNN_PLUG_INLINE='s:!zsh -i*'
 NNN_PLUG_DEFAULT='p:preview-tui;o:preview-tabbed'
 NNN_UTILITIES='j:autojump'
 # NNN_CUSTOM='l:juan_git_log;g:juan_git_status'
