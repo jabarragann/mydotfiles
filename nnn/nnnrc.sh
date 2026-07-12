@@ -1,7 +1,9 @@
 ##################################################
 ## PLUGINS
 
-NNN_PLUG_INLINE='s:!zsh -i*'
+# nnn only manages NNNLVL for its built-in `!` spawn, NOT for plugins
+
+NNN_PLUG_INLINE='s:!NNNLVL=$((NNNLVL+1)) zsh -i*'
 NNN_PLUG_DEFAULT='p:preview-tui;o:preview-tabbed'
 NNN_UTILITIES='j:autojump'
 # NNN_CUSTOM='l:juan_git_log;g:juan_git_status'
@@ -16,11 +18,17 @@ export NNN_FIFO=/tmp/nnn.fifo
 ## https://github.com/jarun/nnn/wiki/Basic-use-cases#sync-subshell-pwd
 ## Requires shell plugin `;s`.
 
-nnn_cd()                                                                                                   
+nnn_cd()
 {
-    if ! [ -z "$NNN_PIPE" ]; then
-        printf "%s\0" "0c${PWD}" > "${NNN_PIPE}" !&
-    fi  
+    # Use -p (is NNN_PIPE a live FIFO?), not -n (is it merely set?). nnn sets
+    # NNN_PIPE for every child, but only *creates* the FIFO for plugins (e.g.
+    # `s`), not for the built-in `!` shell. With -n, exiting a `!` shell would
+    # write to a non-existent pipe, creating a stale regular file at the fixed
+    # per-session path nnn-pipe.<PID>; the next plugin's mkfifo() then collides
+    # with it (EEXIST) and nnn reports "failed!".
+    if [ -p "$NNN_PIPE" ]; then
+        printf "%s\0" "0c${PWD}" > "${NNN_PIPE}" &
+    fi
 }
 
 trap nnn_cd EXIT
