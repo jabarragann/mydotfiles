@@ -32,8 +32,10 @@ trap nnn_cd EXIT
 
 run_nnn()
 {
-    # Block nesting of nnn in subshells
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+    # Block nesting of nnn in subshells. nnn sets NNNLVL whenever it is
+    # running, so any non-empty value (including 0) means we are already
+    # inside an nnn subshell and must not launch another instance.
+    if [ -n "$NNNLVL" ]; then
         echo "nnn is already running"
         return
     fi
