@@ -52,6 +52,7 @@ function zvm_config() {
   ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
   ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+  ZVM_VI_EDITOR=nvim
 }
 
 # vim-mode will override the default ^R binding, so we need to rebind it after vim-mode is initialized
