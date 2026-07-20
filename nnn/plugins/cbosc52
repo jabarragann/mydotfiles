@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+
+# Description: Copy selection to the *host* clipboard via OSC 52
+#              Works over SSH - the terminal emulator does the copy, so no
+#              X11/Wayland/pbcopy is needed on the remote machine.
+#
+# Dependencies:
+# - tr, base64
+# - a terminal with OSC 52 write support (kitty, foot, wezterm, iTerm2, ...)
+#
+# Notes:
+# - Inside tmux, set -g set-clipboard on
+# - Limitation: breaks if a filename has newline in it
+#
+# Shell: POSIX compliant
+
+selection=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
+[ -s "$selection" ] || { echo "plugin cbosc52 error: empty selection" >&2 ; exit 1; }
+
+# nnn stores the selection NUL-separated; base64 as required by OSC 52.
+# tr -d strips base64's line wrapping, which would corrupt the sequence.
+b64=$(tr '\0' '\n' < "$selection" | base64 | tr -d '\r\n')
+
+# Must reach the terminal, not nnn's stdout. -- Claude
+# Prefer $SSH_TTY over /dev/tty: under `nnn -x` the plugin is spawned with
+# F_NOWAIT, which setsid()s away the controlling terminal and makes /dev/tty
+# unusable. $SSH_TTY names the device directly and survives the detach.
+printf '\033]52;c;%s\a' "$b64" > "${SSH_TTY:-/dev/tty}"
