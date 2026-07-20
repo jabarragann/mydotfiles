@@ -69,5 +69,10 @@ source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $HOME/mydotfiles/fzf/fzf_config.sh
 
 ## Go to previous/next history item with ^P/^N
-bindkey '^P' up-history
-bindkey '^N' down-history
+# bindkey '^P' up-history
+# bindkey '^N' down-history
+
+bindkey -M vicmd '^P' up-history
+bindkey -M vicmd '^N' down-history
+bindkey -M viins '^P' up-history
+bindkey -M viins '^N' down-history
