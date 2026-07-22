@@ -1,6 +1,10 @@
 ## Path to local executables
 export PATH="$HOME/.local/bin:$PATH"
 
+## Homebrew (macOS): prepend so brew tools (e.g. bash 5.x) beat the system
+## versions that macOS' path_helper would otherwise put first. No-op on Linux.
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 ## History
 # Resources: https://github.com/rothgar/mastering-zsh/blob/master/docs/config/history.md
 
