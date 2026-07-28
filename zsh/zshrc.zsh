@@ -71,6 +71,11 @@ function zvm_after_init() {
   bindkey -M viins '^N' down-history
   bindkey -M vicmd '^P' up-history
   bindkey -M vicmd '^N' down-history
+
+  # Alt+Enter inserts a literal newline instead of accepting the line, so
+  # multiline commands can be typed by hand. (vim-mode leaves this key alone,
+  # but keep it here with the rest.)
+  bindkey -M viins '^[^M' self-insert-unmeta
 }
 
 source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
