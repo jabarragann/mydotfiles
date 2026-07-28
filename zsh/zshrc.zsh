@@ -59,10 +59,18 @@ function zvm_config() {
   ZVM_VI_EDITOR=nvim
 }
 
-# vim-mode will override the default ^R binding, so we need to rebind it after vim-mode is initialized
+# vim-mode overrides the keymaps during its own init (which runs after .zshrc),
+# so anything we want to keep has to be rebound from this hook.
 function zvm_after_init() {
   bindkey -M viins '^R' fzf-history-widget
   bindkey -M vicmd '^R' fzf-history-widget
+
+  # Go to previous/next history item with ^P/^N, instead of moving by line
+  # within a multiline buffer (the default up/down-line-or-history).
+  bindkey -M viins '^P' up-history
+  bindkey -M viins '^N' down-history
+  bindkey -M vicmd '^P' up-history
+  bindkey -M vicmd '^N' down-history
 }
 
 source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
@@ -71,12 +79,3 @@ source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source $HOME/mydotfiles/fzf/fzf_config.sh
-
-## Go to previous/next history item with ^P/^N
-# bindkey '^P' up-history
-# bindkey '^N' down-history
-
-bindkey -M vicmd '^P' up-history
-bindkey -M vicmd '^N' down-history
-bindkey -M viins '^P' up-history
-bindkey -M viins '^N' down-history
