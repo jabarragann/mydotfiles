@@ -3,9 +3,14 @@
 
 # nnn only manages NNNLVL for its built-in `!` spawn, NOT for plugins
 
-NNN_PLUG_INLINE='s:!NNNLVL=$((NNNLVL+1)) zsh -i*'
+if [ -f "$HOME/.zshrc" ]; then
+    NNN_PLUG_INLINE='s:!NNNLVL=$((NNNLVL+1)) zsh -i*'
+else
+    NNN_PLUG_INLINE='s:!NNNLVL=$((NNNLVL+1)) bash -i*'
+fi
 NNN_PLUG_DEFAULT='p:preview-tui;o:preview-tabbed'
 NNN_UTILITIES='j:autojump'
+
 # NNN_CUSTOM='l:juan_git_log;g:juan_git_status'
 NNN_PLUG="$NNN_PLUG_INLINE;$NNN_PLUG_DEFAULT;$NNN_UTILITIES;$NNN_CUSTOM"
 
