@@ -8,10 +8,12 @@ if [ -f "$HOME/.zshrc" ]; then
 else
     NNN_PLUG_INLINE='s:!NNNLVL=$((NNNLVL+1)) bash -i*'
 fi
+
 NNN_PLUG_DEFAULT='p:preview-tui;o:preview-tabbed'
 NNN_UTILITIES='j:autojump'
 
 # NNN_CUSTOM='l:juan_git_log;g:juan_git_status'
+NNN_CUSTOM='c:clear_selections'
 NNN_PLUG="$NNN_PLUG_INLINE;$NNN_PLUG_DEFAULT;$NNN_UTILITIES;$NNN_CUSTOM"
 
 export NNN_PLUG

@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# Description: Clear the current selection, no matter which context(s) it
+#              was made in (nnn's selection is global, shared across all
+#              tabs/contexts). Also fixes a stale selection left behind
+#              after renaming a selected file, which otherwise persists
+#              until nnn is restarted.
+#
+# Shell: POSIX compliant
+# Author: Claude
+
+if [ -p "$NNN_PIPE" ]; then
+    printf -- "-" > "$NNN_PIPE"
+fi
