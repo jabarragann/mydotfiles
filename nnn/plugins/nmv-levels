@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Description: Batch rename files in the current directory tree via
+#              nvim, prompting for how many directory levels to recurse.
+#              1 = current dir only, 2 = one level of subdirectories, etc.
+#              Thin wrapper around `nmv-depth` (a fork of the stock
+#              `.nmv` plugin) with MAXDEPTH set from the prompt.
+#
+# Shell: bash
+# Author: Claude
+
+read -r -p "Recurse how many levels? [1] " levels
+levels="${levels:-1}"
+
+case "$levels" in
+	''|*[!0-9]*)
+		printf "%s: invalid number of levels: %s\n" "$0" "$levels" >&2
+		exit 1
+		;;
+esac
+
+export MAXDEPTH="$levels"
+exec "$(dirname "$0")/nmv-depth"

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Description: Batch rename all files in the current directory tree via
+#              nvim, unlimited depth. Thin wrapper around `nmv-depth`
+#              (a fork of the stock `.nmv` plugin) with no MAXDEPTH set.
+#
+# Shell: bash
+# Author: Claude
+
+unset MAXDEPTH
+exec "$(dirname "$0")/nmv-depth"
