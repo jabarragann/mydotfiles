@@ -53,7 +53,11 @@ sudo ./install_cmd_utilities.sh #Install dependencies
 ```
 2. Enable nerd fonts in terminal, e.g., terminator configuration
 3. Remove history limits in default bashrc (HISTSIZE, HISTFILESIZE).
+4. Install nnn plugins and custom plugins.
 
+```
+./update_nnn_local_plugins.sh
+```
 
 # Additional configurations
 
