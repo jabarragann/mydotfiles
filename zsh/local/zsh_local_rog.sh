@@ -1,3 +1,4 @@
+export EDITOR="nvim"
 
 ## ENV VARIABLES
 export LD_LIBRARY_PATH=/usr/local/lib
