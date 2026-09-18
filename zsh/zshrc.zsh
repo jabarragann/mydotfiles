@@ -21,7 +21,8 @@ setopt HIST_SAVE_NO_DUPS
 # Append to history instead of overwriting
 setopt APPEND_HISTORY
 # Share history between terminals
-setopt SHARE_HISTORY
+# setopt SHARE_HISTORY # I tried it but I didn't like it.
+
 # Don't save duplicates
 setopt HIST_IGNORE_ALL_DUPS
 # Ignore commands starting with a space
