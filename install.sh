@@ -4,6 +4,9 @@ LOCAL_BIN=$HOME/.local/bin
 mydotfiles="$HOME/mydotfiles"
 programsdir="$HOME/programs/"
 
+# Make tools installed in LOCAL_BIN (e.g. nnn) visible to the rest of this script
+export PATH="$LOCAL_BIN:$PATH"
+
 mkdir -v -p $programsdir
 
 if [ ! -d $LOCAL_BIN  ]; then
@@ -27,9 +30,27 @@ ln -snf $HOME/mydotfiles/kitty/custom $HOME/.config/kitty/kitty_custom
 # Add juan configs to bashrc
 echo 'source $HOME/mydotfiles/bash/bashrc.sh' >> ~/.bashrc
 
-# NVIM CONFIGURATION
+# NVIM 
 #####################
 git clone git@github.com:jabarragann/neovim_config.git ~/.config/nvim
+
+# or 
+# git clone https://github.com/jabarragann/nvim_config.git ~/.config/nvim
+
+# Use v0.11.5 for Ubuntu 24.04. Use v0.10.4 for Ubuntu 20.04
+NVIM_VER="v0.11.5" 
+wget -O "${programsdir}/nvim-${NVIM_VER}.tar.gz" "https://github.com/neovim/neovim/releases/download/${NVIM_VER}/nvim-linux-x86_64.tar.gz"
+mkdir -p "${programsdir}/nvim-${NVIM_VER}"
+tar -xf "${programsdir}/nvim-${NVIM_VER}.tar.gz" -C "${programsdir}/nvim-${NVIM_VER}"
+ln -sf "${programsdir}/nvim-${NVIM_VER}/nvim-linux-x86_64/bin/nvim" "$LOCAL_BIN/nvim"
+
+
+# LSP for NVIM
+#####################
+MARKSMAN_VERSION=2026-02-08
+wget -O "${programsdir}/marksman_${MARKSMAN_VERSION}" "https://github.com/artempyanykh/marksman/releases/download/${MARKSMAN_VERSION}/marksman-linux-x64"
+chmod +x "${programsdir}/marksman_${MARKSMAN_VERSION}"
+ln -sf "${programsdir}/marksman_${MARKSMAN_VERSION}" "$LOCAL_BIN/marksman"
 
 # ZSH TOOLS
 ############
@@ -67,6 +88,15 @@ echo -e "\n <-----Compiling nnn -----> \n"
 cd $programsdir/nnn-${nnn_version}
 make O_NERD=1
 ln -sf $programsdir/nnn-${nnn_version}/nnn $LOCAL_BIN 
+
+# NNN PLUGINS 
+##################
+# pull plugins from the official repository
+echo -e "\n <-----Downloading nnn plugins -----> \n"
+sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
+# copy plugins from my repository
+bash $HOME/mydotfiles/update_nnn_local_plugins.sh
+
 
 # FZF INSTALLATION
 ##################
