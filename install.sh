@@ -20,6 +20,7 @@ ln -s $HOME/mydotfiles/git/gitconfig ~/.gitconfig
 ln -s $HOME/mydotfiles/vim/vimrc ~/.vimrc
 ln -s $HOME/mydotfiles/aliases/aliases.sh $HOME/.aliases
 
+mkdir -p $HOME/.config/kitty
 ln -s $HOME/mydotfiles/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 ## -n option is needed to prevent weird behaviours when symlinking the folder
 ln -snf $HOME/mydotfiles/kitty/custom $HOME/.config/kitty/kitty_custom
