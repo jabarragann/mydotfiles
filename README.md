@@ -161,6 +161,9 @@ git clone https://github.com/yurikhan/kitty_grab.git
 #copy kitty-grab.conf to .mydotfiles
 ```
 
+## Kitty problems:
+- Kitty’s kitten ssh session does not correctly initialize the user’s supplementary Linux groups, causing permission errors on group-restricted directories; running exec su -l <username> restores the expected group memberships.  
+
 # TODO zsh setup
 - [ ] add sourcing statement to .zshrc.
 - [ ] download vim-mode.
