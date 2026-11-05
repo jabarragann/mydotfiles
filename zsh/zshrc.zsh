@@ -43,6 +43,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 ## Sources
 source $HOME/mydotfiles/aliases/aliases.sh
 source $HOME/mydotfiles/nnn/nnnrc.sh
+source $HOME/mydotfiles/tmux/kitty_is_tmux.sh
 
 ## Prompt
 source ~/mydotfiles/zsh/zshprompt.zsh

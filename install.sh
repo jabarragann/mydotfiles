@@ -25,6 +25,8 @@ ln -s $HOME/mydotfiles/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 ## -n option is needed to prevent weird behaviours when symlinking the folder
 ln -snf $HOME/mydotfiles/kitty/custom $HOME/.config/kitty/kitty_custom
 
+ln -s $HOME/mydotfiles/tmux/tmux.conf ~/.tmux.conf
+
 # Not secure to store ssh keys in public repo.
 # ln -s $HOME/mydotfiles/ssh/config $HOME/.ssh/config
 

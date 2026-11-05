@@ -5,7 +5,7 @@ sudo apt-get install kitty-terminfo
 sudo apt-get install pkg-config libncursesw5-dev libreadline-dev
 
 ### My utilities
-sudo apt install vim autojump trash-cli cmatrix tldr build-essential
+sudo apt install vim tmux autojump trash-cli cmatrix tldr build-essential
 
 ### FZF recommendations
 ## fd-find (fd), find alternative.

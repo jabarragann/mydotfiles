@@ -4,6 +4,7 @@
 
 source $HOME/mydotfiles/aliases/aliases.sh
 source $HOME/mydotfiles/nnn/nnnrc.sh
+source $HOME/mydotfiles/tmux/kitty_is_tmux.sh
 source /usr/share/autojump/autojump.sh
 
 #bash prompt

@@ -45,9 +45,28 @@ explicitly if wanted.
 | `ctrl+shift+enter` / `cmd+enter` | new window | default |
 | `ctrl+shift+w` | close window | default |
 | `f11` | toggle fullscreen | custom |
+| `ctrl+alt+shift+o` / `ctrl+alt+shift+e` | kitty split, even when tmux has focus | custom |
+| `ctrl+alt+shift+x` | kitty zoom, even when tmux has focus | custom |
 
-`ctrl+h/j/k/l` are passed through to nvim when focus is on vim
-(`--when-focus-on var:IS_VIM=true`), so the same keys navigate splits in both.
+`ctrl+h/j/k/l` are passed through to nvim when focus is on nvim
+(`--when-focus-on var:IS_NVIM`, set by smart-splits.nvim), so the same keys
+navigate splits in both.
+
+## tmux
+
+When a tmux client has focus (`var:IS_TMUX`, set by a tmux hook and cleared by
+the shell prompt), kitty hands my split keys to tmux:
+
+| Keys | Sent to tmux as |
+|---|---|
+| `ctrl+shift+o` / `ctrl+shift+e` | `prefix "` / `prefix %` (split) |
+| `ctrl+shift+x` | `prefix z` (zoom) |
+| `ctrl+h/j/k/l`, `alt+shift+h/j/k/l` | passed through, bound in `tmux.conf` |
+
+At the edge of the tmux window, `ctrl+h/j/k/l` moves on to the neighbouring kitty
+window. See [`tmux_cheat_sheet.md`](../tmux/tmux_cheat_sheet.md). Inside tmux the
+kitty scrollback bindings (`ctrl+shift+i/u`) only see the visible screen; use tmux
+copy mode instead.
 
 ## Scrollback
 
