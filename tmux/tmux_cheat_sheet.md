@@ -56,17 +56,22 @@ kitty forwards those keys to tmux (`IS_TMUX` in [`kitty.conf`](../kitty/kitty.co
 
 ## Copy mode (scrollback)
 
-`mode-keys vi` is set, so copy mode uses vim motions.
+Set up to feel like kitty-scrollback.nvim (`ctrl+shift+i`): vim motions,
+visual selection, `y` yanks to the system clipboard (OSC52) and exits.
 
-| Key | Action |
-|---|---|
-| `prefix [` | enter copy mode |
-| `prefix PageUp` | enter copy mode and scroll up one page |
-| `space` / `enter` | start selection / copy and exit |
-| `v` | toggle rectangle selection |
+| Key | Action | Native |
+|---|---|---|
+| `ctrl+shift+i` | enter copy mode | `prefix [` |
+| `prefix PageUp` | enter copy mode and scroll up one page | |
+| `v` / `V` / `ctrl+v` | select chars / lines / block | `space` / `V` / `ctrl+v` then `space` |
+| `y` | yank to clipboard and exit | `enter` |
+| `Escape` | clear selection | |
 | `/` `?` `n` `N` | search |
 | `q` | exit |
 | `prefix ]` | paste the tmux buffer |
+| mouse drag | select; copied to the clipboard on release, highlight stays until `q` |
+| `shift` + mouse drag | kitty's own selection, bypassing tmux (spans panes) |
+| mouse wheel | scroll tmux history (enters copy mode) |
 
 ## Misc
 

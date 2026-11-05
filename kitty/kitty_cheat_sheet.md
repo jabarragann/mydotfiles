@@ -61,12 +61,12 @@ the shell prompt), kitty hands my split keys to tmux:
 |---|---|
 | `ctrl+shift+o` / `ctrl+shift+e` | `prefix "` / `prefix %` (split) |
 | `ctrl+shift+x` | `prefix z` (zoom) |
+| `ctrl+shift+i` | `prefix [` (copy mode: vim motions, `v` select, `y` yank) |
 | `ctrl+h/j/k/l`, `alt+shift+h/j/k/l` | passed through, bound in `tmux.conf` |
 
 At the edge of the tmux window, `ctrl+h/j/k/l` moves on to the neighbouring kitty
-window. See [`tmux_cheat_sheet.md`](../tmux/tmux_cheat_sheet.md). Inside tmux the
-kitty scrollback bindings (`ctrl+shift+i/u`) only see the visible screen; use tmux
-copy mode instead.
+window. See [`tmux_cheat_sheet.md`](../tmux/tmux_cheat_sheet.md). `ctrl+shift+u`
+(last command output) has no tmux equivalent and only sees the visible screen.
 
 ## Scrollback
 
