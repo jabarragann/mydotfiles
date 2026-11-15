@@ -30,6 +30,7 @@ kitty forwards those keys to tmux (`IS_TMUX` in [`kitty.conf`](../kitty/kitty.co
 |---|---|
 | `ctrl+alt+shift+o` / `ctrl+alt+shift+e` | kitty split below / right |
 | `ctrl+alt+shift+x` | kitty zoom (stack layout) |
+| `ctrl+alt+shift+h` / `ctrl+alt+shift+l` | previous / next kitty tab |
 | `alt+←/↓/↑/→` | focus kitty window |
 
 ## Sessions (native, no custom bindings)
@@ -46,13 +47,13 @@ kitty forwards those keys to tmux (`IS_TMUX` in [`kitty.conf`](../kitty/kitty.co
 
 ## Windows (tmux "tabs")
 
-| Native key | Command | Action |
-|---|---|---|
-| `prefix c` | `new-window` | new window |
-| `prefix n` / `prefix p` | `next-window` / `previous-window` | next / previous |
-| `prefix 0..9` | `select-window -t N` | go to window N |
-| `prefix ,` | `rename-window` | rename |
-| `prefix &` | `kill-window` | close window (asks first) |
+| My key | Native key | Command | Action |
+|---|---|---|---|
+| | `prefix c` | `new-window` | new window |
+| `ctrl+shift+l` / `ctrl+shift+h` | `prefix n` / `prefix p` | `next-window` / `previous-window` | next / previous |
+| | `prefix 0..9` | `select-window -t N` | go to window N |
+| | `prefix ,` | `rename-window` | rename |
+| | `prefix &` | `kill-window` | close window (asks first) |
 
 ## Copy mode (scrollback)
 
