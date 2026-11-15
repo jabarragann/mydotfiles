@@ -57,9 +57,12 @@ ln -sf "${programsdir}/marksman_${MARKSMAN_VERSION}" "$LOCAL_BIN/marksman"
 
 # ZSH TOOLS
 ############
-
 mkdir -v -p $HOME/.zsh/plugins
 git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.zsh/plugins/zsh-vi-mode
+
+# TMUX TOOLS
+mkdir -v -p $HOME/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 
 # INSTALL NERD FONTS
