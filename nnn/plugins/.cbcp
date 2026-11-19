@@ -51,4 +51,11 @@ elif type clip >/dev/null 2>&1; then
 elif type clipboard >/dev/null 2>&1; then
     # Haiku
     tr '\0' '\n' < "$selection" | clipboard --stdin
+else
+    # Nothing matched: say so instead of silently copying nothing.
+    # Under `nnn -x` stderr may not be visible, so also try a desktop notification.
+    msg="plugin .cbcp error: no clipboard tool found (install xsel or xclip)"
+    echo "$msg" >&2
+    type notify-send >/dev/null 2>&1 && notify-send "nnn" "$msg"
+    exit 1
 fi

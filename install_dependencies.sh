@@ -3,6 +3,7 @@ sudo apt-get install kitty-terminfo
 
 ### NNN dependencies
 sudo apt-get install pkg-config libncursesw5-dev libreadline-dev
+sudo apt install xsel # clipboard for nnn's copy selection (^Y / -x) on X11
 
 ### My utilities
 sudo apt install vim tmux autojump trash-cli cmatrix tldr build-essential
