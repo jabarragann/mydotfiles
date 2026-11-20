@@ -14,3 +14,5 @@ Custom plugins need to be copied to `~/.config/nnn/plugins/`
 ## Note
 
 `cbosc52` writes to `$SSH_TTY` rather than `/dev/tty`: under `nnn -x` the plugin is spawned with `F_NOWAIT`, which `setsid()`s away the controlling terminal and makes `/dev/tty` unusable.
+
+Inside tmux, `cbosc52` uses `tmux load-buffer -w` instead of `$SSH_TTY`. tmux panes inherit `SSH_TTY` from the ssh connection that started the tmux server, so after detaching and reconnecting it points at a dead or reused pty and the copy fails intermittently.

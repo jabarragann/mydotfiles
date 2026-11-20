@@ -9,7 +9,7 @@
 # - a terminal with OSC 52 write support (kitty, foot, wezterm, iTerm2, ...)
 #
 # Notes:
-# - Inside tmux, set -g set-clipboard on
+# - Inside tmux: tmux >= 3.2 with set -g set-clipboard on (uses load-buffer -w)
 # - Limitation: breaks if a filename has newline in it
 #
 # Shell: POSIX compliant
@@ -17,12 +17,24 @@
 selection=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
 [ -s "$selection" ] || { echo "plugin cbosc52 error: empty selection" >&2 ; exit 1; }
 
+# Inside tmux, hand the text to tmux instead of writing the escape ourselves.
+# $SSH_TTY can't be trusted there: tmux panes inherit it from whichever ssh
+# connection started the tmux server, so after a detach/reconnect it points at
+# a dead (or reused!) pty and the copy silently fails or lands elsewhere.
+# load-buffer -w makes tmux send OSC 52 to the client that is attached now
+# (needs tmux >= 3.2 and `set -g set-clipboard on`).
+if [ -n "$TMUX" ]; then
+    tr '\0' '\n' < "$selection" | tmux load-buffer -w -
+    exit
+fi
+
 # nnn stores the selection NUL-separated; base64 as required by OSC 52.
 # tr -d strips base64's line wrapping, which would corrupt the sequence.
 b64=$(tr '\0' '\n' < "$selection" | base64 | tr -d '\r\n')
 
-# Must reach the terminal, not nnn's stdout. -- Claude
+# Must reach the terminal, not nnn's stdout.
 # Prefer $SSH_TTY over /dev/tty: under `nnn -x` the plugin is spawned with
 # F_NOWAIT, which setsid()s away the controlling terminal and makes /dev/tty
 # unusable. $SSH_TTY names the device directly and survives the detach.
+# (Only reliable outside tmux - see above.)
 printf '\033]52;c;%s\a' "$b64" > "${SSH_TTY:-/dev/tty}"
