@@ -45,6 +45,19 @@ kitty forwards those keys to tmux (`IS_TMUX` in [`kitty.conf`](../kitty/kitty.co
 | `prefix $` | `rename-session` | rename session |
 | | `tmux kill-session -t name` | kill a session |
 
+## Save / restore across reboots (tmux-resurrect)
+
+| Key | Action |
+|---|---|
+| `prefix ctrl+s` | save all sessions |
+| `prefix ctrl+r` | restore the last save (sessions already open are skipped) |
+
+tmux-continuum saves all sessions every 15 min. Auto restore is off: after a
+reboot, start `tmux` and press `prefix ctrl+r`.
+
+Snapshots are in `~/.local/share/tmux/resurrect/`, and `last` points to the
+newest. To restore an older one, point `last` at that file, then `prefix ctrl+r`.
+
 ## Windows (tmux "tabs")
 
 | My key | Native key | Command | Action |
